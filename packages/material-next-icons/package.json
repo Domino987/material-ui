@@ -2,7 +2,7 @@
   "name": "@material-next/icons-build",
   "private": true,
   "author": "Material-Next Team",
-  "version": "1.0.0-beta.17",
+  "version": "1.0.0-beta.22",
   "description": "Material Design Svg Icons converted to Material-Next React components.",
   "main": "./src/index.js",
   "keywords": [
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/material-next/material-next/issues"
   },
-  "homepage": "https://github.com/material-next/material-next/tree/v1-beta/packages/material-ui-icons",
+  "homepage": "https://github.com/material-next/material-next/tree/master/packages/material-next-icons",
   "scripts": {
     "prebuild": "rimraf build",
     "build:es2015": "cross-env NODE_ENV=production babel ./src --out-dir ./build",
@@ -32,12 +32,12 @@
     "build": "npm run build:icons && npm run build:es2015 && npm run build:es2015modules && npm run build:copy-files && npm run build:typings",
     "version": "yarn build",
     "release": "np --no-publish --any-branch",
-    "postrelease": "npm publish build",
+    "postrelease": "npm publish --access=public build",
     "test": "mocha",
     "test:watch": "mocha -w"
   },
   "peerDependencies": {
-    "material-ui": "^1.0.0-beta.16",
+    "@material-next/core": "^1.0.0-beta.22",
     "react": "^15.3.0 || ^16.0.0",
     "react-dom": "^15.3.0 || ^16.0.0"
   },

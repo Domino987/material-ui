@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/material-next/material-next/issues"
   },
-  "homepage": "http://material-ui.com/",
+  "homepage": "https://material-next.com/",
   "scripts": {
     "start": "yarn docs:dev",
     "docs:dev": "rimraf node_modules/.cache/babel-loader && cross-env BABEL_ENV=docs-development next dev",
@@ -55,7 +55,7 @@
     "argos": "argos upload test/regressions/screenshots/chrome --token $ARGOS_TOKEN || true",
     "version": "yarn build",
     "release": "np --no-publish --any-branch",
-    "postrelease": "yarn docs:deploy && npm publish build"
+    "postrelease": "yarn docs:deploy && npm publish --access=public build"
   },
   "peerDependencies": {
     "react": "^15.3.0 || ^16.0.0",

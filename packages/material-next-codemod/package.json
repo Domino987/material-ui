@@ -5,7 +5,7 @@
   "description": "Codemod scripts for Material-Next",
   "keywords": [
     "react",
-    "material-ui",
+    "material-next",
     "codemod",
     "jscodeshift"
   ],
@@ -24,7 +24,7 @@
     "src",
     "lib"
   ],
-  "homepage": "https://github.com/material-next/material-next/tree/master/packages/material-ui-codemod",
+  "homepage": "https://github.com/material-next/material-next/tree/master/packages/material-next-codemod",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",

@@ -2,7 +2,6 @@
 /* eslint-disable no-console */
 
 // Generate type definitions for `@material-next/icons`.
-
 const path = require('path');
 const chalk = require('chalk');
 const { outputFile } = require('fs-extra');
