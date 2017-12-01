@@ -1,5 +1,6 @@
 /**
  * Capitalize a string
+ *
  * @param {string} string
  */
 function capitalize(string) {
@@ -9,6 +10,7 @@ function capitalize(string) {
 /**
  * Transform kebab-case icon name to PascalCase
  * e.g. access-alarm => AccessAlarm
+ *
  * @param {string} iconName
  */
 function pascalize(iconName) {
@@ -22,7 +24,8 @@ function pascalize(iconName) {
  * Update all `svg-icons` import references to use `@material-next/icons` package.
  * Find and replace string literal AST nodes to ensure all svg-icon paths get updated, regardless
  * of being in an import declaration, or a require() call, etc.
- * https://github.com/@material-next/core/@material-next/core/tree/v1-beta/packages/@material-next/icons
+ * https://github.com/material-next/material-next/tree/master/packages/material-next-icons
+ *
  * @param {jscodeshift_api_object} j
  * @param {jscodeshift_ast_object} root
  */

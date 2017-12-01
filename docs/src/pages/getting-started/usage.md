@@ -13,7 +13,7 @@ Here is a quick example to get you started, **it's all you need**:
 ```jsx
 import React from 'react';
 import { render } from 'react-dom';
-import Button from 'material-ui/Button';
+import Button from '@material-next/core/Button';
 
 function App() {
   return (

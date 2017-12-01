@@ -42,7 +42,7 @@ This property accepts the following keys:
 - `modal`
 
 Have a look at [overriding with classes](/customization/overrides#overriding-with-classes) section
-and the [implementation of the component](https://github.com/@material-next/core/@material-next/core/tree/v1-beta/src/Drawer/Drawer.js)
+and the [implementation of the component](https://github.com/material-next/material-next/tree/master/src/Drawer/Drawer.js)
 for more detail.
 
 If using the `overrides` key of the theme as documented

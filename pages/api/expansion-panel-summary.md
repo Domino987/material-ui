@@ -32,7 +32,7 @@ This property accepts the following keys:
 - `expandIconExpanded`
 
 Have a look at [overriding with classes](/customization/overrides#overriding-with-classes) section
-and the [implementation of the component](https://github.com/@material-next/core/@material-next/core/tree/v1-beta/src/ExpansionPanel/ExpansionPanelSummary.js)
+and the [implementation of the component](https://github.com/material-next/material-next/tree/master/src/ExpansionPanel/ExpansionPanelSummary.js)
 for more detail.
 
 If using the `overrides` key of the theme as documented

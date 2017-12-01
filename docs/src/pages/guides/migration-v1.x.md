@@ -1,4 +1,4 @@
-# Migration from Material-UI v0.x
+# Migration from Material-UI v1.x
 
 ## FAQ
 

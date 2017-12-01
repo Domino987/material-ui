@@ -10,5 +10,5 @@ npm run docs:dev
 
 ## How can I add a new demo in the documentation?
 
-[You can follow this guide](https://github.com/material-next/material-next/blob/v1-beta/CONTRIBUTING.md)
+[You can follow this guide](https://github.com/material-next/material-next/blob/master/CONTRIBUTING.md)
 on how to get started contributing to Material-Next.

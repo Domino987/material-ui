@@ -66,11 +66,11 @@ function PageHome(props) {
       </Head>
       <div className={classes.hero}>
         <div className={classes.content}>
-          <img
+          {/* <img
             src="/static/images/material-next-logo.svg"
             alt="Material-Next Logo"
             className={classes.logo}
-          />
+          /> */}
           <div className={classes.text}>
             <Typography type="display2" component="h1" color="inherit" gutterBottom>
               {'Material-Next'}

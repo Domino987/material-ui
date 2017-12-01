@@ -5,8 +5,7 @@ import recast from 'recast';
 import kebabCase from 'lodash/kebabCase';
 import { pageToTitle } from './helpers';
 
-const SOURCE_CODE_ROOT_URL =
-  'https://github.com/@material-next/core/@material-next/core/tree/v1-beta';
+const SOURCE_CODE_ROOT_URL = 'https://github.com/material-next/material-next/tree/master';
 
 function generateHeader(reactAPI) {
   return ['---', `filename: ${reactAPI.filename}`, '---'].join('\n');

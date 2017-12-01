@@ -31,7 +31,7 @@ When the `className` property isn't enough, and you need to access deeper elemen
 The list of  classes for each
 component is documented in the **Component API** section.
 For instance, you can have a look at the [Button CSS API](/api/button#css-api).
-Alternatively, you can always look at the [implementation details](https://github.com/material-next/material-next/blob/v1-beta/src/Button/Button.js).
+Alternatively, you can always look at the [implementation details](https://github.com/material-next/material-next/blob/master/src/Button/Button.js).
 
 This example also uses `withStyles()` (see above), but here, `OverridesClasses` is using Button's `classes` prop to
 provide an array containing the **names of classes to override** (keys), and the **CSS class names to apply** (values).

@@ -26,7 +26,7 @@
     Include code to reproduce, if relevant (which it most likely is).
 
     This codesandbox.io template _may_ be a good starting point:
-    https://codesandbox.io/s/github/material-next/material-next/tree/v1-beta/examples/create-react-app
+    https://codesandbox.io/s/github/material-next/material-next/tree/master/examples/create-react-app
 
 
     If YOU DO NOT take time to provide a codesandbox.io reproduction, should the COMMUNITY take time to help you?
@@ -47,9 +47,9 @@
 ## Your Environment
 <!--- Include as many relevant details about the environment with which you experienced the bug. -->
 
-| Tech         | Version |
-|--------------|---------|
-| Material-Next  |         |
-| React        |         |
-| browser      |         |
-| etc          |         |
+| Tech            | Version |
+|-----------------|---------|
+| @material-next/ |         |
+| React           |         |
+| browser         |         |
+| etc             |         |

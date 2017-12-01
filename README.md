@@ -11,14 +11,12 @@ that you can use to tag your questions.
 [![CircleCI](https://img.shields.io/circleci/project/github/material-next/material-next/master.svg)](https://circleci.com/gh/material-next/material-next/tree/master)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-f81a65.svg)](https://gitter.im/callemall/material-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Coverage Status](https://img.shields.io/codecov/c/github/material-next/material-next/master.svg)](https://codecov.io/gh/material-next/material-next/branch/master)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/1320/badge)](https://bestpractices.coreinfrastructure.org/projects/1320)
 
 [![PeerDependencies](https://img.shields.io/david/peer/material-next/material-next.svg)](https://david-dm.org/material-next/material-next#info=peerDependencies&view=list)
 [![Dependencies](https://img.shields.io/david/material-next/material-next.svg)](https://david-dm.org/material-next/material-next)
 [![DevDependencies](https://img.shields.io/david/dev/material-next/material-next.svg)](https://david-dm.org/material-next/material-next#info=devDependencies&view=list)
 
-> Material-Next is a set of [React](http://facebook.github.io/react/) components that implement
-[Google's Material Design](https://www.google.com/design/spec/material-design/introduction.html) specification.
+> Extensible [React](http://facebook.github.io/react/) components that implement [Material Design UI](https://material.io/).
 
 ## This is a fork
 
@@ -47,7 +45,7 @@ Here is a quick example to get you started, it's all you need:
 ```jsx
 import React from 'react';
 import { render } from 'react-dom';
-import Button from 'material-ui/Button';
+import Button from '@material-next/core/Button';
 
 function App() {
   return (

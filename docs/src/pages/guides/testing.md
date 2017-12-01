@@ -4,9 +4,9 @@
 
 We take tests seriously. We have written and maintain **a wide range** of tests so we can
 iterate with confidence on the components, for instance, the visual regression tests provided by [Argos-CI](https://www.argos-ci.com/material-next/material-next) have proven to be really helpful.
-To learn more about our internal tests, you can have a look at the [README](https://github.com/material-next/material-next/blob/v1-beta/test/README.md).
+To learn more about our internal tests, you can have a look at the [README](https://github.com/material-next/material-next/blob/master/test/README.md).
 
-[![Coverage Status](https://img.shields.io/codecov/c/github/material-next/material-next/v1-beta.svg)](https://codecov.io/gh/material-next/material-next/branch/v1-beta)
+[![Coverage Status](https://img.shields.io/codecov/c/github/material-next/material-next/master.svg)](https://codecov.io/gh/material-next/material-next/branch/master)
 
 ## Userspace
 

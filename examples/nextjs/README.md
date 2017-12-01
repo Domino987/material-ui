@@ -1,4 +1,4 @@
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/material-next/material-next/tree/v1-beta/examples/nextjs)
+[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/material-next/material-next/tree/master/examples/nextjs)
 # Next.js example
 
 ## How to use
@@ -6,7 +6,7 @@
 Download the example [or clone the repo](https://github.com/material-next/material-next):
 
 ```bash
-curl https://codeload.github.com/material-next/material-next/tar.gz/v1-beta | tar -xz --strip=2  material-ui-1-beta/examples/nextjs
+curl https://codeload.github.com/material-next/material-next/tar.gz/master | tar -xz --strip=2  material-ui-1-beta/examples/nextjs
 cd nextjs
 ```
 
