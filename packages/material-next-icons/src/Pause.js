@@ -2,12 +2,10 @@ import React from 'react';
 import pure from 'recompose/pure';
 import SvgIcon from '@material-next/core/SvgIcon';
 
-const SvgIconCustom = global.__MUI_SvgIcon__ || SvgIcon;
-
 let Pause = props =>
-  <SvgIconCustom {...props}>
+  <SvgIcon {...props}>
     <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-  </SvgIconCustom>;
+  </SvgIcon>;
 
 Pause = pure(Pause);
 Pause.muiName = 'SvgIcon';

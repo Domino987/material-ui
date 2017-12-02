@@ -2,12 +2,10 @@ import React from 'react';
 import pure from 'recompose/pure';
 import SvgIcon from '@material-next/core/SvgIcon';
 
-const SvgIconCustom = global.__MUI_SvgIcon__ || SvgIcon;
-
 let SignalCellular3Bar = props =>
-  <SvgIconCustom {...props}>
+  <SvgIcon {...props}>
     <path fillOpacity=".3" d="M2 22h20V2z" /><path d="M17 7L2 22h15z" />
-  </SvgIconCustom>;
+  </SvgIcon>;
 
 SignalCellular3Bar = pure(SignalCellular3Bar);
 SignalCellular3Bar.muiName = 'SvgIcon';

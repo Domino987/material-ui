@@ -2,12 +2,10 @@ import React from 'react';
 import pure from 'recompose/pure';
 import SvgIcon from '@material-next/core/SvgIcon';
 
-const SvgIconCustom = global.__MUI_SvgIcon__ || SvgIcon;
-
 let ViewHeadline = props =>
-  <SvgIconCustom {...props}>
+  <SvgIcon {...props}>
     <path d="M4 15h16v-2H4v2zm0 4h16v-2H4v2zm0-8h16V9H4v2zm0-6v2h16V5H4z" />
-  </SvgIconCustom>;
+  </SvgIcon>;
 
 ViewHeadline = pure(ViewHeadline);
 ViewHeadline.muiName = 'SvgIcon';

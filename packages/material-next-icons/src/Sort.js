@@ -2,12 +2,10 @@ import React from 'react';
 import pure from 'recompose/pure';
 import SvgIcon from '@material-next/core/SvgIcon';
 
-const SvgIconCustom = global.__MUI_SvgIcon__ || SvgIcon;
-
 let Sort = props =>
-  <SvgIconCustom {...props}>
+  <SvgIcon {...props}>
     <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z" />
-  </SvgIconCustom>;
+  </SvgIcon>;
 
 Sort = pure(Sort);
 Sort.muiName = 'SvgIcon';

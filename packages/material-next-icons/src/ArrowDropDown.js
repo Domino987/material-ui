@@ -2,12 +2,10 @@ import React from 'react';
 import pure from 'recompose/pure';
 import SvgIcon from '@material-next/core/SvgIcon';
 
-const SvgIconCustom = global.__MUI_SvgIcon__ || SvgIcon;
-
 let ArrowDropDown = props =>
-  <SvgIconCustom {...props}>
+  <SvgIcon {...props}>
     <path d="M7 10l5 5 5-5z" />
-  </SvgIconCustom>;
+  </SvgIcon>;
 
 ArrowDropDown = pure(ArrowDropDown);
 ArrowDropDown.muiName = 'SvgIcon';

@@ -2,12 +2,10 @@ import React from 'react';
 import pure from 'recompose/pure';
 import SvgIcon from '@material-next/core/SvgIcon';
 
-const SvgIconCustom = global.__MUI_SvgIcon__ || SvgIcon;
-
 let FormatIndentDecrease = props =>
-  <SvgIconCustom {...props}>
+  <SvgIcon {...props}>
     <path d="M11 17h10v-2H11v2zm-8-5l4 4V8l-4 4zm0 9h18v-2H3v2zM3 3v2h18V3H3zm8 6h10V7H11v2zm0 4h10v-2H11v2z" />
-  </SvgIconCustom>;
+  </SvgIcon>;
 
 FormatIndentDecrease = pure(FormatIndentDecrease);
 FormatIndentDecrease.muiName = 'SvgIcon';

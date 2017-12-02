@@ -2,12 +2,10 @@ import React from 'react';
 import pure from 'recompose/pure';
 import SvgIcon from '@material-next/core/SvgIcon';
 
-const SvgIconCustom = global.__MUI_SvgIcon__ || SvgIcon;
-
 let Forward = props =>
-  <SvgIconCustom {...props}>
+  <SvgIcon {...props}>
     <path d="M12 8V4l8 8-8 8v-4H4V8z" />
-  </SvgIconCustom>;
+  </SvgIcon>;
 
 Forward = pure(Forward);
 Forward.muiName = 'SvgIcon';

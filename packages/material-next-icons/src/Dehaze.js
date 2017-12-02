@@ -2,12 +2,10 @@ import React from 'react';
 import pure from 'recompose/pure';
 import SvgIcon from '@material-next/core/SvgIcon';
 
-const SvgIconCustom = global.__MUI_SvgIcon__ || SvgIcon;
-
 let Dehaze = props =>
-  <SvgIconCustom {...props}>
+  <SvgIcon {...props}>
     <path d="M2 15.5v2h20v-2H2zm0-5v2h20v-2H2zm0-5v2h20v-2H2z" />
-  </SvgIconCustom>;
+  </SvgIcon>;
 
 Dehaze = pure(Dehaze);
 Dehaze.muiName = 'SvgIcon';

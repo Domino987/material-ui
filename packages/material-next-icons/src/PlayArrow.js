@@ -2,12 +2,10 @@ import React from 'react';
 import pure from 'recompose/pure';
 import SvgIcon from '@material-next/core/SvgIcon';
 
-const SvgIconCustom = global.__MUI_SvgIcon__ || SvgIcon;
-
 let PlayArrow = props =>
-  <SvgIconCustom {...props}>
+  <SvgIcon {...props}>
     <path d="M8 5v14l11-7z" />
-  </SvgIconCustom>;
+  </SvgIcon>;
 
 PlayArrow = pure(PlayArrow);
 PlayArrow.muiName = 'SvgIcon';

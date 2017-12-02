@@ -2,12 +2,10 @@ import React from 'react';
 import pure from 'recompose/pure';
 import SvgIcon from '@material-next/core/SvgIcon';
 
-const SvgIconCustom = global.__MUI_SvgIcon__ || SvgIcon;
-
 let SkipPrevious = props =>
-  <SvgIconCustom {...props}>
+  <SvgIcon {...props}>
     <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
-  </SvgIconCustom>;
+  </SvgIcon>;
 
 SkipPrevious = pure(SkipPrevious);
 SkipPrevious.muiName = 'SvgIcon';
