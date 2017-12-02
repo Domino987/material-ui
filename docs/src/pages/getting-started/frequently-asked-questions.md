@@ -2,7 +2,7 @@
 
 Stuck on a particular problem? Check some of these common gotchas first.
 
-If you still can't find what you're looking for, you can ask the community in [gitter](https://gitter.im/material-next/material-next).
+If you still can't find what you're looking for, you can ask the community on [Discord](https://discord.gg/MwT5uvA).
 For how-to questions and other non-issues, please use [StackOverflow](https://stackoverflow.com/questions/tagged/material-next) instead of Github issues. There is a StackOverflow tag called `material-next` that you can use to tag your questions.
 
 ## Why do the fixed positioned elements move when a modal is opened?
