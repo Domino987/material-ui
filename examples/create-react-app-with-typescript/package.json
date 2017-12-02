@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "material-ui": "next",
+    "@material-next/core": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-scripts-ts": "latest"
