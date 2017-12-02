@@ -12,6 +12,8 @@ that you can use to tag your questions.
 [![CircleCI](https://img.shields.io/circleci/project/github/material-next/material-next/master.svg)](https://circleci.com/gh/material-next/material-next/tree/master)
 [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/MwT5uvA)
 [![Coverage Status](https://img.shields.io/codecov/c/github/material-next/material-next/master.svg)](https://codecov.io/gh/material-next/material-next/branch/master)
+![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
+[![Follow on Twitter](https://img.shields.io/twitter/follow/MaterialNext.svg?label=follow+Material-Next)](https://twitter.com/MaterialNext)
 
 [![PeerDependencies](https://img.shields.io/david/peer/material-next/material-next.svg)](https://david-dm.org/material-next/material-next#info=peerDependencies&view=list)
 [![Dependencies](https://img.shields.io/david/material-next/material-next.svg)](https://david-dm.org/material-next/material-next)

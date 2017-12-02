@@ -21,19 +21,17 @@ const styles = theme => ({
       marginRight: 0,
     },
   },
-  demo: {
-    ...theme.mixins.gutters({
-      display: 'flex',
-      justifyContent: 'center',
-      paddingTop: theme.spacing.unit * 2,
-      paddingBottom: theme.spacing.unit * 2,
-    }),
+  demo: theme.mixins.gutters({
+    display: 'flex',
+    justifyContent: 'center',
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
     [theme.breakpoints.up('sm')]: {
       paddingLeft: theme.spacing.unit * 3,
       paddingRight: theme.spacing.unit * 3,
       paddingTop: theme.spacing.unit * 6,
     },
-  },
+  }),
   codeButton: {
     flip: false,
     display: 'none',
