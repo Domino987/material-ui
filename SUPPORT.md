@@ -2,7 +2,7 @@
 
 ## Asking Questions
 
-For how-to questions and other non-issues, please use [StackOverflow](http://stackoverflow.com/questions/tagged/material-next) or [Gitter](https://gitter.im/material-next/material-next) chat instead of Github issues. There is a StackOverflow tag called "material-next" that you can use to tag your questions.
+For how-to questions and other non-issues, please use [StackOverflow](http://stackoverflow.com/questions/tagged/material-next) or [Discord](https://discord.gg/MwT5uvA) chat instead of Github issues. There is a StackOverflow tag called "material-next" that you can use to tag your questions.
 
 ## Opening an Issue
 
