@@ -1,8 +1,6 @@
-// @flow
-
 const config = {
   google: {
-    id: 'UA-106598593-2',
+    id: 'UA-110485647-1',
   },
 };
 

@@ -27,21 +27,13 @@ We've have forked the repo from `mui-org/material-ui` to `material-next/material
 
 Material-Next is available as an [npm package](https://www.npmjs.org/package/@material-next/core).
 
-**Stable channel**
 ```sh
 npm install --save @material-next/core
 ```
 
-**Pre-release channel**
-```sh
-npm install --save @material-next/core@next
-```
-
-Please note that `@next` will only point to pre-releases; to get the latest stable release use `@latest` instead.
-
 ## Usage
 
-Here is a quick example to get you started, it's all you need:
+Here is a quick example to get you started, **it's all you need**:
 
 ```jsx
 import React from 'react';
@@ -58,6 +50,10 @@ function App() {
 
 render(<App />, document.querySelector('#app'));
 ```
+
+Yes, it's really all you need to get started as you can see in this live and interactive demo:
+
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/4j7m47vlm4)
 
 ## Examples
 
