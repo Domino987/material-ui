@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "jss": "^8.1.0",
-    "jss-preset-default": "^3.0.0",
-    "material-ui": "next",
+    "@material-next/core": "latest",
+    "jss": "latest",
+    "jss-preset-default": "latest",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",

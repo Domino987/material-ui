@@ -9,7 +9,7 @@
 .*/node_modules/react-event-listener/src
 
 ; Comment this line if you do not use enzyme.
-.*/node_modules/material-ui/test-utils
+.*/node_modules/@material-next/core/test-utils
 
 ; flow 55
 ; FIXME: we should be flow checking against jss
@@ -29,8 +29,6 @@ esproposal.export_star_as=enable
 esproposal.decorators=ignore
 
 unsafe.enable_getters_and_setters=true
-
-module.name_mapper='^flow-example-material-ui\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
 
 suppress_type=$FlowFixMe
 suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
