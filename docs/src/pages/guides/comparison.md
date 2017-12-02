@@ -12,12 +12,19 @@ If you notice an inaccuracy or something that doesn’t seem quite right, please
 ## Material-Next
 
 ![stars](https://img.shields.io/github/stars/material-next/material-next.svg?style=social&label=Star)
-![npm](https://img.shields.io/npm/dm/material-ui.svg)
+![npm](https://img.shields.io/npm/dm/@material-next/core.svg)
 
 We'll try very hard to avoid bias, although as the core team, we obviously like Material-Next a lot ❤️.
 There are some problems we think it solves better than anything else out there; if we didn’t believe that, we wouldn’t be working on it 😄.
 
 We do want to be fair and accurate though, so where other libraries offer significant advantages we try to list these as well.
+
+## Material-UI
+
+![stars](https://img.shields.io/github/stars/mui-org/material-ui.svg?style=social&label=Star)
+![npm](https://img.shields.io/npm/dm/material-ui.svg)
+
+Material-Next is a fork of Material-UI following a different governance model. [Find out more](https://medium.com/).
 
 ## Material Design Lite (MDL)
 

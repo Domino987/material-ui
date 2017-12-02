@@ -7,9 +7,10 @@ instead of Github issues. There is a StackOverflow tag called "material-next"
 that you can use to tag your questions.
 
 # [Material-Next](https://material-ui-next.com/)
-[![npm package](https://img.shields.io/npm/v/@material-next/core/master.svg)](https://www.npmjs.org/package/@material-next/core)
+[![npm package](https://img.shields.io/npm/v/@material-next/core.svg)](https://www.npmjs.org/package/@material-next/core)
+![npm](https://img.shields.io/npm/dm/@material-next/core.svg)
 [![CircleCI](https://img.shields.io/circleci/project/github/material-next/material-next/master.svg)](https://circleci.com/gh/material-next/material-next/tree/master)
-[![Gitter](https://img.shields.io/badge/gitter-join%20chat-f81a65.svg)](https://gitter.im/callemall/material-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Gitter](https://img.shields.io/badge/gitter-join%20chat-f81a65.svg)](https://gitter.im/material-next/material-next?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Coverage Status](https://img.shields.io/codecov/c/github/material-next/material-next/master.svg)](https://codecov.io/gh/material-next/material-next/branch/master)
 
 [![PeerDependencies](https://img.shields.io/david/peer/material-next/material-next.svg)](https://david-dm.org/material-next/material-next#info=peerDependencies&view=list)

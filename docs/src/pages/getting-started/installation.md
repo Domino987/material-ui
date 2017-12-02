@@ -1,6 +1,6 @@
 # Installation
 
-Material-Next is available as an [npm package](https://www.npmjs.org/package/@material-ui/core).
+Material-Next is available as an [npm package](https://www.npmjs.org/package/@material-next/core).
 
 ## npm
 
@@ -25,8 +25,8 @@ on how to do so.
 ## SVG Icons
 
 In order to use prebuilt SVG Material icons, such as those found in the [component demos](/demos/app-bar/)
-you must first install the [material-ui-icons](https://www.npmjs.org/package/material-ui-icons) package:
+you must first install the [@material-next/icons](https://www.npmjs.org/package/@material-next/icons) package:
 
 ```
-npm install --save @material-ui/icons
+npm install --save @material-next/icons
 ```

@@ -17,7 +17,7 @@ Set `direction: 'rtl'` on your custom theme.
 We are relying on a JSS plugin to flip the styles: [jss-rtl](https://github.com/alitaheri/jss-rtl).
 
 ```sh
-npm install jss-rtl
+npm install --save jss-rtl
 ```
 
 Internally, we are dynamically enabling this plugin when `direction: 'rtl'` is set on the theme.
@@ -30,7 +30,7 @@ import { create } from 'jss';
 import preset from 'jss-preset-default';
 import rtl from 'jss-rtl';
 import JssProvider from 'react-jss/lib/JssProvider';
-import createGenerateClassName from 'material-ui/styles/createGenerateClassName';
+import createGenerateClassName from '@material-next/core/styles/createGenerateClassName';
 
 // Configure JSS
 const jss = create({ plugins: [...preset().plugins, rtl()] });

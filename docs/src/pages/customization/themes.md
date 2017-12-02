@@ -78,7 +78,7 @@ You can make a theme dark by setting `type` to `dark`.
 ### The other variables
 
 We have tried to normalize the implementation by adding many more variables: typography, breakpoints, transitions, etc. You can see below what the theme object looks like with the default values.
-If you want to learn more, we suggesting having a look at [`material-ui/style/createMuiTheme.js`](https://github.com/material-next/material-next/blob/master/src/styles/createMuiTheme.js).
+If you want to learn more, we suggesting having a look at [`@material-next/core/style/createMuiTheme.js`](https://github.com/material-next/material-next/blob/master/src/styles/createMuiTheme.js).
 
 {{demo='pages/customization/ThemeDefault.js'}}
 
@@ -132,7 +132,7 @@ You can see the full properties API in [this dedicated page](/api/mui-theme-prov
 ```jsx
 import React from 'react';
 import { render } from 'react-dom';
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import { MuiThemeProvider, createMuiTheme } from '@material-next/core/styles';
 import Root from './Root';
 
 const theme = createMuiTheme();
@@ -163,9 +163,9 @@ Generate a theme base on the options received.
 #### Examples
 
 ```js
-import { createMuiTheme } from 'material-ui/styles';
-import purple from 'material-ui/colors/purple';
-import green from 'material-ui/colors/green';
+import { createMuiTheme } from '@material-next/core/styles';
+import purple from '@material-next/core/colors/purple';
+import green from '@material-next/core/colors/green';
 
 const theme = createMuiTheme({
   palette: {
@@ -193,7 +193,7 @@ Provide the `theme` object as a property of the input component.
 #### Examples
 
 ```js
-import { withTheme } from 'material-ui/styles'
+import { withTheme } from '@material-next/core/styles'
 
 export default withTheme()(MyComponent);
 ```

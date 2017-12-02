@@ -4,7 +4,7 @@
 
 Material-Next takes the bundle size very seriously.
 We are relying on [size-limit](https://github.com/ai/size-limit) to prevent introducing any regression.
-We monitor the size of the bundle:
+We monitor the size of the bundle at each commit:
 - When importing **all the components**. This lets us spot any [unwanted bundle size increase](https://github.com/material-next/material-next/tree/master/.size-limit#L4).
 - When importing **a single component**. This lets us estimate [the overhead of our core dependencies](https://github.com/material-next/material-next/tree/master/.size-limit#L8). (styling, theming, etc.: ~20 kB gzipped)
 
@@ -19,17 +19,17 @@ You have couple of options to overcome this situation:
 
 ### Option 1
 
-You can import directly from `material-ui/` to avoid pulling in unused modules. For instance, instead of:
+You can import directly from `@material-next/core` to avoid pulling in unused modules. For instance, instead of:
 
 ```js
-import { Button, TextField } from 'material-ui';
+import { Button, TextField } from '@material-next/core';
 ```
 
 use:
 
 ```js
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
+import Button from '@material-next/core/Button';
+import TextField from '@material-next/core/TextField';
 ```
 
 The public API available in this manner is defined as the set of imports available from the top-level `material-ui` module. Anything not available through the top-level `material-ui` module is a **private API**, and is subject to change without notice.
@@ -39,7 +39,7 @@ The public API available in this manner is defined as the set of imports availab
 Another option is to keep using the shortened import like the following, but still have the size of the bundle optimized thanks to a **Babel plugin**:
 
 ```js
-import { Button, TextField } from 'material-ui';
+import { Button, TextField } from '@material-next/core';
 ```
 
 Pick one of the following plugins:

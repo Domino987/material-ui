@@ -90,16 +90,16 @@ To avoid worrying about this edge case it may be a good habit to always provide 
 
 ## Customization of `Theme`
 
-When adding custom properties to the `Theme`, you may continue to use it in a strongly typed way by exploiting 
+When adding custom properties to the `Theme`, you may continue to use it in a strongly typed way by exploiting
 [Typescript's module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation).
 
 The following example adds an `appDrawer` property that is merged into the one exported by `material-ui`:
 
 ```jsx
-import { Theme } from 'material-ui/styles/createMuiTheme'
-import { Breakpoint } from 'material-ui/styles/createBreakpoints'
+import { Theme } from '@material-next/core/styles/createMuiTheme'
+import { Breakpoint } from '@material-next/core/styles/createBreakpoints'
 
-declare module 'material-ui/styles/createMuiTheme' {
+declare module '@material-next/core/styles/createMuiTheme' {
   interface Theme {
     appDrawer: {
       width: React.CSSProperties['width']
@@ -118,8 +118,8 @@ declare module 'material-ui/styles/createMuiTheme' {
 
 And a custom theme factory with additional defaulted options:
 
-```js
-import {default as createMuiTheme, ThemeOptions} from 'material-ui/styles/createMuiTheme'
+```jsx
+import { default as createMuiTheme, ThemeOptions } from '@material-next/core/styles/createMuiTheme'
 import { merge } from 'lodash'
 
 export default function createMyTheme(options: ThemeOptions) {

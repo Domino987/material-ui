@@ -2,8 +2,8 @@
 
 Stuck on a particular problem? Check some of these common gotchas first.
 
-If you still can't find what you're looking for, you can ask the community in [gitter](https://gitter.im/callemall/material-ui).
-For how-to questions and other non-issues, please use [StackOverflow](https://stackoverflow.com/questions/tagged/material-ui) instead of Github issues. There is a StackOverflow tag called `material-ui` that you can use to tag your questions.
+If you still can't find what you're looking for, you can ask the community in [gitter](https://gitter.im/material-next/material-next).
+For how-to questions and other non-issues, please use [StackOverflow](https://stackoverflow.com/questions/tagged/material-next) instead of Github issues. There is a StackOverflow tag called `material-next` that you can use to tag your questions.
 
 ## Why do the fixed positioned elements move when a modal is opened?
 
@@ -56,7 +56,7 @@ export default withTheme()(withStyles(styles)(Modal));
 ## Material-Next is awesome. How can I support the project?
 
 There are a lot of ways to support Material-Next:
-- Improve [the documentation](https://github.com/material-next/material-next/tree/master/docs).- Help others to get started.- [Spread the word](https://twitter.com/MaterialNext).- Answer [StackOverflow questions](https://stackoverflow.com/questions/tagged/material-ui).If you use Material-Next in a commercial project and would like to support its continued development by becoming a **Sponsor**,
-or in a side or hobby project and would like to become a backer, you can do so through [OpenCollective](https://opencollective.com/material-ui).
+- Improve [the documentation](https://github.com/material-next/material-next/tree/master/docs).- Help others to get started.- [Spread the word](https://twitter.com/MaterialNext).- Answer [StackOverflow questions](https://stackoverflow.com/questions/tagged/material-next).If you use Material-Next in a commercial project and would like to support its continued development by becoming a **Sponsor**,
+or in a side or hobby project and would like to become a backer, you can do so through [OpenCollective](https://opencollective.com/material-next).
 
 All funds raised are managed transparently, and Sponsors receive recognition in the README and on the Material-Next home page.

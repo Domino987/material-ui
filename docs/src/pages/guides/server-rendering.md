@@ -71,9 +71,9 @@ import JssProvider from 'react-jss/lib/JssProvider';
 import { create } from 'jss';
 import preset from 'jss-preset-default';
 // import rtl from 'jss-rtl'; // in-case you're supporting rtl
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import createGenerateClassName from 'material-ui/styles/createGenerateClassName';
-import { green, red } from 'material-ui/colors';
+import { MuiThemeProvider, createMuiTheme } from '@material-next/core/styles';
+import createGenerateClassName from '@material-next/core/styles/createGenerateClassName';
+import { green, red } from '@material-next/core/colors';
 
 function handleRender(req, res) {
   // Create a sheetsRegistry instance.
@@ -142,8 +142,8 @@ Let's take a look at our client file:
 ```jsx
 import React from 'react';
 import { render } from 'react-dom';
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import { green, red } from 'material-ui/colors';
+import { MuiThemeProvider, createMuiTheme } from '@material-next/core/styles';
+import { green, red } from '@material-next/core/colors';
 import App from './App';
 
 class Main extends React.Component {

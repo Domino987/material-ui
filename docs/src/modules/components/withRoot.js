@@ -82,7 +82,11 @@ const pages = [
       },
       {
         pathname: '/guides/migration-v0.x',
-        title: 'Migration from v0.x',
+        title: 'Migration from Material-UI v0.x',
+      },
+      {
+        pathname: '/guides/migration-v1.x',
+        title: 'Migration from Material-UI v1.x',
       },
       {
         pathname: '/guides/comparison',

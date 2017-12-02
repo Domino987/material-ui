@@ -36,7 +36,7 @@ const styles = theme => ({
   },
   navLinkButton: {
     color: theme.palette.text.secondary,
-    textIndent: theme.spacing.unit * 3,
+    marginLeft: theme.spacing.unit * 3,
     fontSize: theme.typography.pxToRem(13),
   },
   activeButton: {
