@@ -1,9 +1,8 @@
-// @flow
-
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { withStyles } from '@material-next/core/styles';
 import marked from 'marked';
+import { withStyles } from '@material-next/core/styles';
 import prism from 'docs/src/modules/utils/prism';
 
 const renderer = new marked.Renderer();
@@ -205,13 +204,7 @@ const styles = theme => ({
   },
 });
 
-type Props = {
-  classes: Object,
-  className?: string,
-  text: string,
-};
-
-function MarkdownElement(props: Props) {
+function MarkdownElement(props) {
   const { classes, className, text, ...other } = props;
 
   /* eslint-disable react/no-danger */
@@ -224,5 +217,11 @@ function MarkdownElement(props: Props) {
   );
   /* eslint-enable */
 }
+
+MarkdownElement.propTypes = {
+  classes: PropTypes.object.isRequired,
+  className: PropTypes.string,
+  text: PropTypes.string,
+};
 
 export default withStyles(styles, { flip: false })(MarkdownElement);

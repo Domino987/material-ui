@@ -1,5 +1,3 @@
-// @flow weak
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import find from 'lodash/find';
@@ -202,43 +200,7 @@ function withRoot(BaseComponent) {
   // Prevent rerendering
   const PureBaseComponent = pure(BaseComponent);
 
-  type WithRootProps = {
-    reduxServerState?: Object,
-    sheetsRegistry?: Object,
-    url: Object,
-  };
-
-  class WithRoot extends React.Component<WithRootProps> {
-    static childContextTypes = {
-      url: PropTypes.object,
-      pages: PropTypes.array,
-      activePage: PropTypes.object,
-    };
-
-    static getInitialProps(ctx) {
-      let initialProps = {};
-      const redux = initRedux({});
-
-      if (BaseComponent.getInitialProps) {
-        const baseComponentInitialProps = BaseComponent.getInitialProps({ ...ctx, redux });
-        initialProps = {
-          ...baseComponentInitialProps,
-          ...initialProps,
-        };
-      }
-
-      if (process.browser) {
-        return initialProps;
-      }
-
-      return {
-        ...initialProps,
-        // No need to include other initial Redux state because when it
-        // initialises on the client-side it'll create it again anyway
-        reduxServerState: redux.getState(),
-      };
-    }
-
+  class WithRoot extends React.Component {
     constructor(props, context) {
       super(props, context);
       this.redux = initRedux(this.props.reduxServerState || {});
@@ -266,6 +228,42 @@ function withRoot(BaseComponent) {
       );
     }
   }
+
+  WithRoot.propTypes = {
+    reduxServerState: PropTypes.object,
+    sheetsRegistry: PropTypes.object,
+    url: PropTypes.object,
+  };
+
+  WithRoot.childContextTypes = {
+    url: PropTypes.object,
+    pages: PropTypes.array,
+    activePage: PropTypes.object,
+  };
+
+  WithRoot.getInitialProps = ctx => {
+    let initialProps = {};
+    const redux = initRedux({});
+
+    if (BaseComponent.getInitialProps) {
+      const baseComponentInitialProps = BaseComponent.getInitialProps({ ...ctx, redux });
+      initialProps = {
+        ...baseComponentInitialProps,
+        ...initialProps,
+      };
+    }
+
+    if (process.browser) {
+      return initialProps;
+    }
+
+    return {
+      ...initialProps,
+      // No need to include other initial Redux state because when it
+      // initialises on the client-side it'll create it again anyway
+      reduxServerState: redux.getState(),
+    };
+  };
 
   if (process.env.NODE_ENV !== 'production') {
     WithRoot.displayName = wrapDisplayName(BaseComponent, 'withRoot');
