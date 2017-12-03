@@ -120,26 +120,21 @@ And a custom theme factory with additional defaulted options:
 
 ```jsx
 import { default as createMuiTheme, ThemeOptions } from '@material-next/core/styles/createMuiTheme'
-import { merge } from 'lodash'
 
 export default function createMyTheme(options: ThemeOptions) {
-  return createMuiTheme(
-    merge(
-      {
-        appDrawer: {
-          width: 225,
-          breakpoint: 'lg',
-        },
-      },
-      options,
-    ),
-  )
+  return createMuiTheme({
+    appDrawer: {
+      width: 225,
+      breakpoint: 'lg',
+    },
+    ...options,
+  })
 }
 ```
 
 This could be used like:
 
-```js
+```jsx
 import createMyTheme from './styles/createMyTheme'
 
 const theme = createMyTheme({appDrawer: {breakpoint: 'md'}})
