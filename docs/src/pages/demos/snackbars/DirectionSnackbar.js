@@ -1,5 +1,3 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
-
 import React from 'react';
 import Button from '@material-next/core/Button';
 import Snackbar from '@material-next/core/Snackbar';
