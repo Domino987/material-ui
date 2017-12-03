@@ -147,6 +147,9 @@ export const styles = (theme: Object) => ({
       boxShadow: theme.shadows[12],
     },
   },
+  fullWidth: {
+    width: '100%',
+  },
 });
 
 export type Color = 'default' | 'inherit' | 'primary' | 'accent' | 'contrast';
@@ -208,6 +211,10 @@ export type Props = {
    */
   fab: boolean,
   /**
+   * If `true`, the button will take up the full width of its container.
+   */
+  fullWidth?: boolean,
+  /**
    * The URL to link to when the button is clicked.
    * If defined, an `a` element will be used as the root node.
    */
@@ -228,6 +235,7 @@ class Button extends React.Component<ProvidedProps & Props> {
     dense: false,
     disabled: false,
     fab: false,
+    fullWidth: false,
     disableFocusRipple: false,
     raised: false,
     disableRipple: false,
@@ -244,6 +252,7 @@ class Button extends React.Component<ProvidedProps & Props> {
       disabled,
       disableFocusRipple,
       fab,
+      fullWidth,
       raised,
       ...other
     } = this.props;
@@ -263,6 +272,7 @@ class Button extends React.Component<ProvidedProps & Props> {
         [classes.raisedContrast]: !flat && color === 'contrast',
         [classes.dense]: dense,
         [classes.disabled]: disabled,
+        [classes.fullWidth]: fullWidth,
       },
       classNameProp,
     );

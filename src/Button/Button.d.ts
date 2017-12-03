@@ -14,6 +14,7 @@ export interface ButtonProps extends StandardProps<
   disableFocusRipple?: boolean;
   disableRipple?: boolean;
   fab?: boolean;
+  fullWidth?: boolean;
   href?: string;
   raised?: boolean;
   type?: string;

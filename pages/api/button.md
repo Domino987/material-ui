@@ -21,6 +21,7 @@ filename: /src/Button/Button.js
 | disableRipple | boolean | false | If `true`, the ripple effect will be disabled. |
 | disabled | boolean | false | If `true`, the button will be disabled. |
 | fab | boolean | false | If `true`, will use floating action button styling. |
+| fullWidth | boolean | false | If `true`, the button will take up the full width of its container. |
 | href | string |  | The URL to link to when the button is clicked. If defined, an `a` element will be used as the root node. |
 | raised | boolean | false | If `true`, the button will use raised styling. |
 
@@ -44,6 +45,7 @@ This property accepts the following keys:
 - `raisedContrast`
 - `disabled`
 - `fab`
+- `fullWidth`
 
 Have a look at [overriding with classes](/customization/overrides#overriding-with-classes) section
 and the [implementation of the component](https://github.com/material-next/material-next/tree/master/src/Button/Button.js)
