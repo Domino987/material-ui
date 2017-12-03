@@ -1,4 +1,3 @@
-// @flow
 /* eslint-disable no-underscore-dangle */
 
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
@@ -15,7 +14,7 @@ if (
   devtools = window.__REDUX_DEVTOOLS_EXTENSION__();
 }
 
-function create(initialState: Object) {
+function create(initialState) {
   let middlewares = [];
 
   if (
@@ -38,7 +37,7 @@ function create(initialState: Object) {
   );
 }
 
-export default function initRedux(initialState: Object) {
+export default function initRedux(initialState) {
   // Make sure to create a new store for every server-side request so that data
   // isn't shared between connections (which would be bad)
   if (!process.browser) {

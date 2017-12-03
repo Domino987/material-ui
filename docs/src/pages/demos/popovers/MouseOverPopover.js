@@ -1,5 +1,3 @@
-/* eslint-disable flowtype/require-valid-file-annotation, jsx-a11y/mouse-events-have-key-events */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Popover from '@material-next/core/Popover';
@@ -50,7 +48,12 @@ class MouseOverPopover extends Component {
 
     return (
       <div className="wrapper">
-        <Typography onMouseOver={this.handlePopoverOpen} onMouseOut={this.handlePopoverClose}>
+        <Typography
+          onFocus={this.handlePopoverOpen}
+          onMouseOver={this.handlePopoverOpen}
+          onBlur={this.handlePopoverClose}
+          onMouseOut={this.handlePopoverClose}
+        >
           Hover with a Popover.
         </Typography>
         <Popover
@@ -76,8 +79,10 @@ class MouseOverPopover extends Component {
           <Target>
             <Typography
               aria-describedby="react-popper-tooltip"
+              onFocus={this.handlePopperOpen}
               onMouseOver={this.handlePopperOpen}
               onMouseOut={this.handlePopperClose}
+              onBlur={this.handlePopperClose}
             >
               Hover with react-popper.
             </Typography>

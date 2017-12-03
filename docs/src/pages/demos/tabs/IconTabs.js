@@ -1,5 +1,3 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
-
 import React from 'react';
 import Paper from '@material-next/core/Paper';
 import Tabs, { Tab } from '@material-next/core/Tabs';

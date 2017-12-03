@@ -1,5 +1,3 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
-
 import React from 'react';
 import { FormControlLabel, FormGroup } from '@material-next/core/Form';
 import Switch from '@material-next/core/Switch';
