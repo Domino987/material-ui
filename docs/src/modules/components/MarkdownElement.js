@@ -32,8 +32,9 @@ marked.setOptions({
   sanitize: false,
   smartLists: true,
   smartypants: false,
-  // $FlowFixMe
-  highlight(code: string, lang?: string) {
+  // prism uses the following class prefix.
+  langPrefix: 'language-',
+  highlight(code, lang) {
     let language;
     switch (lang) {
       case 'diff':
@@ -44,6 +45,7 @@ marked.setOptions({
         language = prism.languages.css;
         break;
 
+      case 'js':
       case 'jsx':
       default:
         language = prism.languages.jsx;
@@ -67,7 +69,7 @@ const styles = theme => ({
       marginTop: -theme.spacing.unit * 12, // Offset for the anchor.
       position: 'absolute',
     },
-    '& pre': {
+    '& pre, & pre[class*="language-"]': {
       margin: `${theme.spacing.unit * 3}px 0`,
       padding: '12px 18px',
       backgroundColor: theme.palette.background.paper,

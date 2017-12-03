@@ -12,16 +12,17 @@ import MarkdownElement from 'docs/src/modules/components/MarkdownElement';
 const styles = theme => ({
   root: {
     position: 'relative',
-    backgroundColor: theme.palette.background.contentFrame,
     marginBottom: 40,
     marginLeft: -theme.spacing.unit * 2,
     marginRight: -theme.spacing.unit * 2,
     [theme.breakpoints.up('sm')]: {
+      padding: `0 ${theme.spacing.unit}px`,
       marginLeft: 0,
       marginRight: 0,
     },
   },
   demo: theme.mixins.gutters({
+    backgroundColor: theme.palette.background.contentFrame,
     display: 'flex',
     justifyContent: 'center',
     paddingTop: theme.spacing.unit * 2,
@@ -38,7 +39,7 @@ const styles = theme => ({
     zIndex: 10,
     position: 'absolute',
     top: 2,
-    right: 7,
+    right: theme.spacing.unit * 2,
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
@@ -64,7 +65,7 @@ const styles = theme => ({
       zIndex: 10,
       position: 'absolute',
       top: 2,
-      right: 48,
+      right: theme.spacing.unit * 8,
     },
   },
 });
@@ -162,7 +163,7 @@ if (rootElement) {
           </IconButton>
         </Tooltip>
         <Collapse in={codeOpen} unmountOnExit>
-          <MarkdownElement dir="ltr" className={classes.code} text={`\`\`\`js\n${raw}\n\`\`\``} />
+          <MarkdownElement dir="ltr" className={classes.code} text={`\`\`\`jsx\n${raw}\n\`\`\``} />
         </Collapse>
         <div className={classes.demo}>
           <DemoComponent />
