@@ -4,6 +4,9 @@ This guide aims to help Material-Next users to use other styling solutions like 
 
 ### React JSS
 
+![stars](https://img.shields.io/github/stars/cssinjs/react-jss.svg?style=social&label=Star)
+![npm](https://img.shields.io/npm/dm/react-jss.svg?)
+
 Material-Next's styling solution shares many building blocks with [react-jss](https://github.com/cssinjs/react-jss).
 We went ahead and forked the project in order to handle our unique needs, but we're working to merge the changes and fixes from Material-Next back to react-jss.
 
