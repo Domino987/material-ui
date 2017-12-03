@@ -1,10 +1,26 @@
 # Interoperability with Style Libraries
 
-This guide aims to help Material UI users to use Style Libraries like Glamorous, Styled-components or CSS Modules.
+This guide aims to help Material-Next users to use other styling solutions like [React JSS](https://github.com/cssinjs/jss), [Styled Components](https://github.com/styled-components/styled-components), [Glamorous](https://github.com/paypal/glamorous) and [Glamor](https://github.com/threepointone/glamor).
 
-## react-jss
+### React JSS
 
-WIP
+Material-Next's styling solution shares many building blocks with [react-jss](https://github.com/cssinjs/react-jss).
+We went ahead and forked the project in order to handle our unique needs, but we're working to merge the changes and fixes from Material-Next back to react-jss.
+
+In the following demo we demonstrate how to use `injectSheet()` and "the styles as a function of the properties" feature:
+
+```js
+const styles = theme => ({
+  root: {
+    color: props => (props.variant === 'primary'
+      ? theme.palette.primary[500]
+      : 'inherit'),
+    textDecoration: 'inherit',
+  },
+});
+```
+
+{{demo='pages/guides/ReactJss.js'}}
 
 ## Styled Components
 
