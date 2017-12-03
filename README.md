@@ -8,7 +8,7 @@ that you can use to tag your questions.
 
 # [Material-Next](https://material-ui-next.com/)
 [![npm package](https://img.shields.io/npm/v/@material-next/core.svg)](https://www.npmjs.org/package/@material-next/core)
-![npm](https://img.shields.io/npm/dm/@material-next/core.svg)
+[![npm download](https://img.shields.io/npm/dm/@material-next/core.svg)](https://www.npmjs.com/package/@material-next/core)
 [![CircleCI](https://img.shields.io/circleci/project/github/material-next/material-next/master.svg)](https://circleci.com/gh/material-next/material-next/tree/master)
 [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/MwT5uvA)
 [![Coverage Status](https://img.shields.io/codecov/c/github/material-next/material-next/master.svg)](https://codecov.io/gh/material-next/material-next/branch/master)
