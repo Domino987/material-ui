@@ -4,7 +4,7 @@ import { SwitchBaseProps, SwitchBaseClassKey } from '../internal/SwitchBase';
 
 export interface RadioProps extends StandardProps<SwitchBaseProps, RadioClassKey> {}
 
-export type RadioClassKey = SwitchBaseClassKey;
+export type RadioClassKey = SwitchBaseClassKey | 'colorPrimary' | 'colorSecondery';
 
 declare const Radio: React.ComponentType<RadioProps>;
 

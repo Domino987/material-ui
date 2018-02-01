@@ -7,6 +7,7 @@ export interface SwitchBaseProps
   checked?: boolean | string;
   checkedClassName?: string;
   checkedIcon?: React.ReactNode;
+  color?: 'primary' | 'secondary';
   defaultChecked?: boolean;
   disabled?: boolean;
   disabledClassName?: string;
@@ -22,7 +23,7 @@ export interface SwitchBaseProps
   value?: string;
 }
 
-export type SwitchBaseClassKey = 'root' | 'default' | 'checked' | 'disabled' | 'input';
+export type SwitchBaseClassKey = 'root' | 'checked' | 'disabled' | 'input';
 
 export type SwitchBase = React.Component<SwitchBaseProps>;
 

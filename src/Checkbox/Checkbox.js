@@ -4,36 +4,41 @@ import classNames from 'classnames';
 import SwitchBase from '../internal/SwitchBase';
 import IndeterminateCheckBoxIcon from '../internal/svg-icons/IndeterminateCheckBox';
 import withStyles from '../styles/withStyles';
+import { capitalize } from '../utils/helpers';
 
 export const styles = theme => ({
-  default: {
+  root: {
     color: theme.palette.text.secondary,
   },
   checked: {},
-  checkedPrimary: {
-    color: theme.palette.primary.main,
+  disabled: {},
+  colorPrimary: {
+    '&$checked': {
+      color: theme.palette.primary.main,
+    },
+    '&$disabled': {
+      color: theme.palette.action.disabled,
+    },
   },
-  checkedSecondary: {
-    color: theme.palette.secondary.main,
-  },
-  disabled: {
-    color: theme.palette.action.disabled,
+  colorSecondary: {
+    '&$checked': {
+      color: theme.palette.secondary.main,
+    },
+    '&$disabled': {
+      color: theme.palette.action.disabled,
+    },
   },
 });
 
 function Checkbox(props) {
   const { checkedIcon, classes, color, icon, indeterminate, indeterminateIcon, ...other } = props;
-  const checkedClass = classNames(classes.checked, {
-    [classes.checkedPrimary]: color === 'primary',
-    [classes.checkedSecondary]: color === 'secondary',
-  });
 
   return (
     <SwitchBase
       checkedIcon={indeterminate ? indeterminateIcon : checkedIcon}
       classes={{
-        default: classes.default,
-        checked: checkedClass,
+        root: classNames(classes.root, classes[`color${capitalize(color)}`]),
+        checked: classes.checked,
         disabled: classes.disabled,
       }}
       icon={indeterminate ? indeterminateIcon : icon}

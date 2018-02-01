@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import withStyles from '../styles/withStyles';
 import SwitchBase from '../internal/SwitchBase';
+import { capitalize } from '../utils/helpers';
 
 export const styles = theme => ({
   root: {
@@ -12,23 +13,6 @@ export const styles = theme => ({
     flexShrink: 0,
     // For correct alignment with the text.
     verticalAlign: 'middle',
-  },
-  bar: {
-    borderRadius: 7,
-    display: 'block',
-    position: 'absolute',
-    width: 34,
-    height: 14,
-    top: '50%',
-    marginTop: -7,
-    left: '50%',
-    marginLeft: -17,
-    transition: theme.transitions.create(['opacity', 'background-color'], {
-      duration: theme.transitions.duration.shortest,
-    }),
-    backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.common.black : theme.palette.common.white,
-    opacity: theme.palette.type === 'light' ? 0.38 : 0.3,
   },
   icon: {
     boxShadow: theme.shadows[1],
@@ -40,8 +24,7 @@ export const styles = theme => ({
   iconChecked: {
     boxShadow: theme.shadows[2],
   },
-  // For SwitchBase
-  default: {
+  switchBase: {
     zIndex: 1,
     color: theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[400],
     transition: theme.transitions.create('transform', {
@@ -54,50 +37,69 @@ export const styles = theme => ({
       opacity: 0.5,
     },
   },
-  checkedPrimary: {
-    color: theme.palette.primary.main,
-    '& + $bar': {
-      backgroundColor: theme.palette.primary.main,
+  colorPrimary: {
+    '&$checked': {
+      color: theme.palette.primary.main,
+      '& + $bar': {
+        backgroundColor: theme.palette.primary.main,
+      },
     },
   },
-  checkedSecondary: {
-    color: theme.palette.secondary.main,
-    '& + $bar': {
-      backgroundColor: theme.palette.secondary.main,
+  colorSecondary: {
+    '&$checked': {
+      color: theme.palette.secondary.main,
+      '& + $bar': {
+        backgroundColor: theme.palette.secondary.main,
+      },
     },
   },
   disabled: {
-    color: theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[800],
     '& + $bar': {
-      backgroundColor:
-        theme.palette.type === 'light' ? theme.palette.common.black : theme.palette.common.white,
       opacity: theme.palette.type === 'light' ? 0.12 : 0.1,
     },
     '& $icon': {
       boxShadow: theme.shadows[1],
     },
+    '&$switchBase': {
+      color: theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[800],
+      '& + $bar': {
+        backgroundColor:
+          theme.palette.type === 'light' ? theme.palette.common.black : theme.palette.common.white,
+      },
+    },
+  },
+  bar: {
+    borderRadius: 7,
+    display: 'block',
+    position: 'absolute',
+    width: 34,
+    height: 14,
+    top: '50%',
+    left: '50%',
+    marginTop: -7,
+    marginLeft: -17,
+    transition: theme.transitions.create(['opacity', 'background-color'], {
+      duration: theme.transitions.duration.shortest,
+    }),
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.common.black : theme.palette.common.white,
+    opacity: theme.palette.type === 'light' ? 0.38 : 0.3,
   },
 });
 
 function Switch(props) {
   const { classes, className, color, ...other } = props;
-  const icon = <span className={classes.icon} />;
-  const checkedIcon = <span className={classNames(classes.icon, classes.iconChecked)} />;
-  const checkedClass = classNames(classes.checked, {
-    [classes.checkedPrimary]: color === 'primary',
-    [classes.checkedSecondary]: color === 'secondary',
-  });
 
   return (
     <span className={classNames(classes.root, className)}>
       <SwitchBase
-        icon={icon}
+        icon={<span className={classes.icon} />}
+        checkedIcon={<span className={classNames(classes.icon, classes.iconChecked)} />}
         classes={{
-          default: classes.default,
-          checked: checkedClass,
+          root: classNames(classes.switchBase, classes[`color${capitalize(color)}`]),
+          checked: classes.checked,
           disabled: classes.disabled,
         }}
-        checkedIcon={checkedIcon}
         {...other}
       />
       <span className={classes.bar} />

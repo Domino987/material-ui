@@ -3,27 +3,24 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import green from 'material-ui/colors/green';
 import { FormGroup, FormControlLabel } from 'material-ui/Form';
-import Switch from 'material-ui/Switch';
+import Checkbox from 'material-ui/Checkbox';
 
 const styles = {
-  switchBase: {
-    color: green[50],
+  root: {
+    color: green[600],
     '&$checked': {
       color: green[500],
-      '& + $bar': {
-        backgroundColor: green[500],
-      },
     },
   },
-  bar: {},
   checked: {},
 };
 
-class SwithcLabech extends React.Component {
+class CheckboxLabels extends React.Component {
   state = {
     checkedA: true,
     checkedB: true,
     checkedF: true,
+    checkedG: true,
   };
 
   handleChange = name => event => {
@@ -37,7 +34,7 @@ class SwithcLabech extends React.Component {
       <FormGroup row>
         <FormControlLabel
           control={
-            <Switch
+            <Checkbox
               checked={this.state.checkedA}
               onChange={this.handleChange('checkedA')}
               value="checkedA"
@@ -47,7 +44,7 @@ class SwithcLabech extends React.Component {
         />
         <FormControlLabel
           control={
-            <Switch
+            <Checkbox
               checked={this.state.checkedB}
               onChange={this.handleChange('checkedB')}
               value="checkedB"
@@ -56,19 +53,33 @@ class SwithcLabech extends React.Component {
           }
           label="Primary"
         />
-        <FormControlLabel control={<Switch value="checkedC" />} label="Uncontrolled" />
-        <FormControlLabel disabled control={<Switch value="checkedD" />} label="Disabled" />
-        <FormControlLabel disabled control={<Switch checked value="checkedE" />} label="Disabled" />
+        <FormControlLabel control={<Checkbox value="checkedC" />} label="Uncontrolled" />
+        <FormControlLabel disabled control={<Checkbox value="checkedD" />} label="Disabled" />
+        <FormControlLabel
+          disabled
+          control={<Checkbox checked value="checkedE" />}
+          label="Disabled"
+        />
         <FormControlLabel
           control={
-            <Switch
+            <Checkbox
               checked={this.state.checkedF}
               onChange={this.handleChange('checkedF')}
               value="checkedF"
+              indeterminate
+            />
+          }
+          label="Indeterminate"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={this.state.checkedG}
+              onChange={this.handleChange('checkedG')}
+              value="checkedG"
               classes={{
-                switchBase: classes.switchBase,
+                root: classes.root,
                 checked: classes.checked,
-                bar: classes.bar,
               }}
             />
           }
@@ -79,8 +90,8 @@ class SwithcLabech extends React.Component {
   }
 }
 
-SwithcLabech.propTypes = {
+CheckboxLabels.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SwithcLabech);
+export default withStyles(styles)(CheckboxLabels);

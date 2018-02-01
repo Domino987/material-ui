@@ -12,6 +12,8 @@ export const styles = {
     alignItems: 'center',
     transition: 'none',
   },
+  checked: {},
+  disabled: {},
   input: {
     cursor: 'inherit',
     position: 'absolute',
@@ -23,9 +25,6 @@ export const styles = {
     margin: 0,
     padding: 0,
   },
-  default: {},
-  checked: {},
-  disabled: {},
 };
 
 /**
@@ -69,7 +68,7 @@ class SwitchBase extends React.Component {
       classes,
       className: classNameProp,
       disabled: disabledProp,
-      icon: iconProp,
+      icon,
       id,
       inputProps,
       inputRef,
@@ -91,26 +90,26 @@ class SwitchBase extends React.Component {
     }
 
     const checked = this.isControlled ? checkedProp : this.state.checked;
-    const className = classNames(classes.root, classes.default, classNameProp, {
-      [classes.checked]: checked,
-      [classes.disabled]: disabled,
-    });
-
-    const icon = checked ? checkedIcon : iconProp;
-
     const hasLabelFor = type === 'checkbox' || type === 'radio';
 
     return (
       <IconButton
         data-mui-test="SwitchBase"
         component="span"
-        className={className}
+        className={classNames(
+          classes.root,
+          {
+            [classes.checked]: checked,
+            [classes.disabled]: disabled,
+          },
+          classNameProp,
+        )}
         disabled={disabled}
         tabIndex={null}
         role={undefined}
         {...other}
       >
-        {icon}
+        {checked ? checkedIcon : icon}
         <input
           id={hasLabelFor && id}
           type={type}

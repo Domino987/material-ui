@@ -4,7 +4,7 @@ import { SwitchBaseProps, SwitchBaseClassKey } from '../internal/SwitchBase';
 
 export interface CheckboxProps extends StandardProps<SwitchBaseProps, CheckboxClassKey> {}
 
-export type CheckboxClassKey = SwitchBaseClassKey;
+export type CheckboxClassKey = SwitchBaseClassKey | 'colorPrimary' | 'colorSecondery';
 
 declare const Checkbox: React.ComponentType<CheckboxProps>;
 
