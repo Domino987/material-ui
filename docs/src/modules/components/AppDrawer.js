@@ -49,6 +49,9 @@ function renderNavItems(props, pages, activePage) {
   return <List>{navItems}</List>;
 }
 
+// // Indent the nested list for Lab
+// {...(childPage.pathname === '/lab/api' ? { style: { paddingLeft: 18 } } : {})}
+
 function reduceChildRoutes(props, activePage, items, childPage, index) {
   if (childPage.children && childPage.children.length > 1) {
     const openImmediately = activePage.pathname.indexOf(childPage.pathname) === 0 || false;
@@ -57,10 +60,8 @@ function reduceChildRoutes(props, activePage, items, childPage, index) {
         key={index}
         openImmediately={openImmediately}
         title={pageToTitle(childPage)}
-        // Indent the nested list for Lab
-        {...(childPage.pathname === '/lab/api' ? { style: { paddingLeft: 18 } } : {})}
       >
-        {renderNavItems(props, childPage.children, activePage, 0)}
+        {renderNavItems(props, childPage.children, activePage)}
       </AppDrawerNavItem>,
     );
   } else if (childPage.title !== false) {
