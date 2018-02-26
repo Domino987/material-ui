@@ -1,6 +1,5 @@
 {
   "name": "material-ui-codemod",
-  "private": false,
   "author": "Material-UI Team",
   "version": "1.0.0-beta.35",
   "description": "Codemod scripts for Material-UI.",
@@ -17,7 +16,8 @@
     "test:unit": "cd ../../ && ./node_modules/.bin/mocha packages/material-ui-codemod/src/**/*.spec.js",
     "test:watch": "yarn test:unit --watch",
     "build": "../../node_modules/.bin/rimraf lib && ../../node_modules/.bin/babel ./src --out-dir ./lib",
-    "version": "npm publish"
+    "version": "yarn build",
+    "release": "yarn config set version-tag-prefix \"@material-ui/codemod@\" && ../../node_modules/.bin/np --any-branch"
   },
   "repository": {
     "type": "git",
