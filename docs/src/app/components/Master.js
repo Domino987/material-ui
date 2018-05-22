@@ -205,7 +205,7 @@ class Master extends Component {
         <Title render="Material-UI" />
         <div style={prepareStyles(styles.v1)}>
           Aww yeah, &nbsp;
-          <a style={prepareStyles(styles.v1Link)} href="https://material-ui-next.com/">
+          <a style={prepareStyles(styles.v1Link)} href="https://material-ui.com/">
             <span>
               Material-UI v1
             </span>
