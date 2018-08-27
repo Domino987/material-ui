@@ -55,7 +55,7 @@ class Checkbox extends React.Component {
     }
   };
 
-  handleInputRef = ref => {
+  onInputRef = ref => {
     this.inputRef = ReactDOM.findDOMNode(ref);
   };
 
@@ -80,7 +80,7 @@ class Checkbox extends React.Component {
           disabled: classes.disabled,
         }}
         icon={indeterminate ? indeterminateIcon : icon}
-        inputRef={this.handleInputRef}
+        inputRef={this.onInputRef}
         {...other}
       />
     );
