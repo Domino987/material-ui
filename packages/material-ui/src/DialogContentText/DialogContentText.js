@@ -11,7 +11,7 @@ export const styles = {
 };
 
 function DialogContentText(props) {
-  return <Typography component="p" variant="subheading" color="textSecondary" {...props} />;
+  return <Typography component="p" variant="subtitle1" color="textSecondary" {...props} />;
 }
 
 DialogContentText.propTypes = {

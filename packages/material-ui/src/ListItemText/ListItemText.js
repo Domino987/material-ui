@@ -59,7 +59,7 @@ function ListItemText(props, context) {
   if (primary != null && primary.type !== Typography && !disableTypography) {
     primary = (
       <Typography
-        variant="subheading"
+        variant="subtitle1"
         className={classNames(classes.primary, { [classes.textDense]: dense })}
         component="span"
         {...primaryTypographyProps}

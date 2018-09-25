@@ -18,7 +18,7 @@ function round(value) {
 export default function createTypography(palette, typography) {
   const defaultFontFamiliy = '"Roboto", "Helvetica", "Arial", sans-serif';
   const {
-    fontFamily: fontFamilyOption,
+    fontFamily = defaultFontFamiliy,
     // The default font size of the Material Specification.
     fontSize = 14, // px
     fontWeightLight = 300,
@@ -36,8 +36,6 @@ export default function createTypography(palette, typography) {
     allVariants,
     ...other
   } = typeof typography === 'function' ? typography(palette) : typography;
-
-  const fontFamily = fontFamilyOption || defaultFontFamiliy;
 
   warning(
     !Object.keys(other).some(variant => deprecatedVariants.includes(variant)),
@@ -85,14 +83,13 @@ export default function createTypography(palette, typography) {
     return variant;
   };
 
-  const utils = { getVariant, letterSpacingToEm, pxToRem };
-
   const propertiesForCategory = (weight, size, casing, letterSpacing) => {
     // The letter spacing was designed for the Roboto font-family. Using the same letter-spacing
     // across font-families can cause issues with the kerning.
-    const robotoStyles = !fontFamilyOption
-      ? { letterSpacing: letterSpacingToEm(letterSpacing, size) }
-      : {};
+    const robotoStyles =
+      fontFamily === defaultFontFamiliy
+        ? { letterSpacing: letterSpacingToEm(letterSpacing, size) }
+        : {};
 
     return {
       color: palette.text.primary,
@@ -108,19 +105,19 @@ export default function createTypography(palette, typography) {
   /* eslint-disable key-spacing, no-multi-spaces */
   // prettier-ignore
   const nextVariants = {
-    headline1:   propertiesForCategory(fontWeightLight,   96, {},         -1.5),
-    headline2:   propertiesForCategory(fontWeightLight,   60, {},         -0.5),
-    headline3:   propertiesForCategory(fontWeightRegular, 48, {},          0),
-    headline4:   propertiesForCategory(fontWeightRegular, 34, {},          0.25),
-    headline5:   propertiesForCategory(fontWeightRegular, 24, {},          0),
-    headline6:   propertiesForCategory(fontWeightMedium,  20, {},          0.15),
-    subtitle1:   propertiesForCategory(fontWeightRegular, 16, {},          0.15),
-    subtitle2:   propertiesForCategory(fontWeightMedium,  14, {},          0.1),
-    body1Next:   propertiesForCategory(fontWeightRegular, 16, {},          0.5),
-    body2Next:   propertiesForCategory(fontWeightRegular, 14, {},          0.25),
-    buttonNext:  propertiesForCategory(fontWeightMedium,  14, caseAllCaps, 0.75),
-    captionNext: propertiesForCategory(fontWeightRegular, 12, {},          0.4),
-    overline:    propertiesForCategory(fontWeightRegular, 10, caseAllCaps, 1.5),
+    h1: propertiesForCategory(fontWeightLight, 96, {}, -1.5),
+    h2: propertiesForCategory(fontWeightLight, 60, {}, -0.5),
+    h3: propertiesForCategory(fontWeightRegular, 48, {}, 0),
+    h4: propertiesForCategory(fontWeightRegular, 34, {}, 0.25),
+    h5: propertiesForCategory(fontWeightRegular, 24, {}, 0),
+    h6: propertiesForCategory(fontWeightMedium, 20, {}, 0.15),
+    subtitle1: propertiesForCategory(fontWeightRegular, 16, {}, 0.15),
+    subtitle2: propertiesForCategory(fontWeightMedium, 14, {}, 0.1),
+    body1Next: propertiesForCategory(fontWeightRegular, 16, {}, 0.5),
+    body2Next: propertiesForCategory(fontWeightRegular, 14, {}, 0.25),
+    buttonNext:  propertiesForCategory(fontWeightMedium, 14, caseAllCaps, 0.75),
+    captionNext: propertiesForCategory(fontWeightRegular, 12, {}, 0.4),
+    overline:  propertiesForCategory(fontWeightRegular, 10, caseAllCaps, 1.5),
   };
   /* eslint-enable key-spacing, no-multi-spaces */
 
@@ -232,7 +229,9 @@ export default function createTypography(palette, typography) {
 
   return deepmerge(
     {
-      ...utils,
+      getVariant,
+      letterSpacingToEm,
+      pxToRem,
       round,
       fontFamily,
       fontSize,

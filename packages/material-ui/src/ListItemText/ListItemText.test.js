@@ -41,7 +41,7 @@ describe('<ListItemText />', () => {
       const wrapper = shallow(<ListItemText primary="This is the primary text" />);
       assert.strictEqual(wrapper.children().length, 1, 'should have 1 child');
       assert.strictEqual(wrapper.childAt(0).type(), Typography);
-      assert.strictEqual(wrapper.childAt(0).props().variant, 'subheading');
+      assert.strictEqual(wrapper.childAt(0).props().variant, 'subtitle1');
       assert.strictEqual(
         wrapper
           .childAt(0)
@@ -111,7 +111,7 @@ describe('<ListItemText />', () => {
 
       assert.strictEqual(wrapper.children().length, 2, 'should have 2 children');
       assert.strictEqual(wrapper.childAt(0).type(), Typography);
-      assert.strictEqual(wrapper.childAt(0).props().variant, 'subheading');
+      assert.strictEqual(wrapper.childAt(0).props().variant, 'subtitle1');
       assert.strictEqual(
         wrapper
           .childAt(0)
@@ -152,7 +152,7 @@ describe('<ListItemText />', () => {
 
     assert.strictEqual(wrapper.children().length, 2, 'should have 2 children');
     assert.strictEqual(wrapper.childAt(0).type(), Typography);
-    assert.strictEqual(wrapper.childAt(0).props().variant, 'subheading');
+    assert.strictEqual(wrapper.childAt(0).props().variant, 'subtitle1');
     assert.strictEqual(
       wrapper
         .childAt(0)

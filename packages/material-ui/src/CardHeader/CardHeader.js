@@ -56,7 +56,7 @@ function CardHeader(props) {
   if (title != null && title.type !== Typography && !disableTypography) {
     title = (
       <Typography
-        variant={avatar ? 'body2' : 'headline'}
+        variant={avatar ? 'body2' : 'h5'}
         className={classes.title}
         component="span"
         {...titleTypographyProps}

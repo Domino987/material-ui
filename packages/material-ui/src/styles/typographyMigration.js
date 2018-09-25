@@ -25,12 +25,12 @@ export const dangerousVariants = [...deprecatedVariants, ...restyledVariants];
  */
 export function nextVariantMapping(variant) {
   const nextVariant = {
-    display4: 'headline1',
-    display3: 'headline2',
-    display2: 'headline3',
-    display1: 'headline4',
-    headline: 'headline5',
-    title: 'headline6',
+    display4: 'h1',
+    display3: 'h2',
+    display2: 'h3',
+    display1: 'h4',
+    headline: 'h5',
+    title: 'h6',
     subheading: 'subtitle1',
   }[variant];
 
