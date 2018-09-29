@@ -1,6 +1,6 @@
 import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+// import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 import getPageContext from './getPageContext';
 
@@ -19,6 +19,7 @@ function withRoot(Component) {
       }
     }
 
+            // <CssBaseline />
     render() {
       return (
         <JssProvider generateClassName={this.muiPageContext.generateClassName}>
@@ -29,7 +30,6 @@ function withRoot(Component) {
             sheetsManager={this.muiPageContext.sheetsManager}
           >
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            <CssBaseline />
             <Component {...this.props} />
           </MuiThemeProvider>
         </JssProvider>
