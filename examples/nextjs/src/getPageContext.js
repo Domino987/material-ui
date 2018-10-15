@@ -25,6 +25,8 @@ const theme = createMuiTheme({
   },
 });
 
+const sheetsCache = new Map();
+
 function createPageContext() {
   return {
     theme,
@@ -34,6 +36,7 @@ function createPageContext() {
     sheetsRegistry: new SheetsRegistry(),
     // The standard class name generator.
     generateClassName: createGenerateClassName(),
+    sheetsCache: process.browser ? null : sheetsCache,
   };
 }
 

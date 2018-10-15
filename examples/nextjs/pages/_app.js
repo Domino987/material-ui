@@ -33,6 +33,7 @@ class MyApp extends App {
           <MuiThemeProvider
             theme={this.pageContext.theme}
             sheetsManager={this.pageContext.sheetsManager}
+            sheetsCache={this.pageContext.sheetsCache}
           >
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
