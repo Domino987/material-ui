@@ -8,6 +8,7 @@ import styledEmotion from 'react-emotion';
 import { renderStylesToString } from 'emotion-server';
 import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase/ButtonBase';
+import Typography from '@material-ui/core/Typography';
 
 const theme = createMuiTheme();
 
@@ -110,7 +111,34 @@ const EmotionButton = styledEmotion('button')({
 
 const sheetsCache = new Map();
 
+const Typography2 = props => <Typography {...props} />;
+
+const theme1 = createMuiTheme({
+  prosp: {
+    MuiTypography: {
+      display2: 'h1',
+      display1: 'h1',
+      title: 'h1',
+      body1: 'p',
+    },
+  },
+});
+
 suite
+  .add('Typography 2', () => {
+    ReactDOMServer.renderToString(
+      <MuiThemeProvider theme={theme}>
+        <Typography2>Material-UI</Typography2>
+      </MuiThemeProvider>,
+    );
+  })
+  .add('Typography 1', () => {
+    ReactDOMServer.renderToString(
+      <MuiThemeProvider theme={theme1}>
+        <Typography>Material-UI</Typography>
+      </MuiThemeProvider>,
+    );
+  })
   .add('ButtonBase cache instances', () => {
     ReactDOMServer.renderToString(
       <MuiThemeProvider theme={theme}>

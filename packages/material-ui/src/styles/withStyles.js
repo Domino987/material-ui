@@ -227,18 +227,15 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
     createSheet(theme) {
       const styles = this.stylesCreatorSaved.create(theme, name);
-      let meta = name;
+      const meta = name || getDisplayName(Component);
 
-      if (process.env.NODE_ENV !== 'production' && !meta) {
-        meta = getDisplayName(Component);
-        warning(
-          typeof meta === 'string',
-          [
-            'Material-UI: the component displayName is invalid. It needs to be a string.',
-            `Please fix the following component: ${Component}.`,
-          ].join('\n'),
-        );
-      }
+      warning(
+        typeof meta === 'string',
+        [
+          'Material-UI: the component displayName is invalid. It needs to be a string.',
+          `Please fix the following component: ${Component}.`,
+        ].join('\n'),
+      );
 
       const sheet = this.jss.createStyleSheet(styles, {
         meta,
@@ -249,6 +246,10 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
         ...this.stylesCreatorSaved.options,
         name,
         ...styleSheetOptions,
+        cacheKeys: {
+          theme,
+          stylesCreator: this.stylesCreatorSaved,
+        },
       });
 
       return sheet;

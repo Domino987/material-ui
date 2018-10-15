@@ -3,15 +3,15 @@
 import express from 'express';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { SheetsRegistry } from 'react-jss/lib/jss';
+import { create, SheetsRegistry } from 'jss';
+import jssCache from '@material-ui/core/styles/jssCache';
 import JssProvider from 'react-jss/lib/JssProvider';
 import {
   MuiThemeProvider,
   createMuiTheme,
   createGenerateClassName,
+  jssPreset,
 } from '@material-ui/core/styles';
-import green from '@material-ui/core/colors/green';
-import red from '@material-ui/core/colors/red';
 import Pricing from 'docs/src/pages/page-layout-examples/pricing/Pricing';
 
 function renderFullPage(html, css) {
@@ -29,24 +29,24 @@ function renderFullPage(html, css) {
   `;
 }
 
-const sheetsCache = new Map();
+const sheetsCache = null;
 
 const theme = createMuiTheme({
-  palette: {
-    primary: green,
-    accent: red,
-    type: 'light',
-  },
   typography: {
     useNextVariants: true,
   },
+});
+
+// Configure JSS
+const jss = create({
+  plugins: [jssCache(), ...jssPreset().plugins],
 });
 
 function handleRender(req, res) {
   const sheetsRegistry = new SheetsRegistry();
   const generateClassName = createGenerateClassName();
   const html = ReactDOMServer.renderToString(
-    <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
+    <JssProvider registry={sheetsRegistry} jss={jss} generateClassName={generateClassName}>
       <MuiThemeProvider theme={theme} sheetsManager={new Map()} sheetsCache={sheetsCache}>
         <Pricing />
       </MuiThemeProvider>
@@ -59,7 +59,7 @@ function handleRender(req, res) {
 const app = express();
 app.use(handleRender);
 
-const port = 3001;
+const port = 3010;
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });

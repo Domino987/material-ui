@@ -31,7 +31,7 @@ bombardier \
   -l \
   -d 60s \
   -m GET \
-  '0.0.0.0:3001/'
+  '0.0.0.0:3010/'
 
 Statistics        Avg      Stdev        Max
   Reqs/sec       442.47      55.44     547.63
