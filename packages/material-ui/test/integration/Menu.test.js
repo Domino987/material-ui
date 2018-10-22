@@ -1,8 +1,8 @@
 import React from 'react';
 import keycode from 'keycode';
 import { assert } from 'chai';
-import { ReactWrapper } from 'enzyme';
 import TestUtils from 'react-dom/test-utils';
+import ReactTestUtils from 'react-dom/test-utils';
 import { createMount } from 'packages/material-ui/src/test-utils';
 import Popover from 'packages/material-ui/src/Popover';
 import Portal from 'packages/material-ui/src/Portal';
@@ -130,17 +130,15 @@ describe('<Menu> integration', () => {
 
   describe('closing', () => {
     let wrapper;
-    let list;
-    let backdrop;
+    let portalLayer;
 
     beforeEach(() => {
       wrapper = mount(<SimpleMenu transitionDuration={0} />);
       wrapper.setState({ open: true });
-      const portal = wrapper.find(Portal).props().children;
-      const portalWrapper = new ReactWrapper(portal);
-      list = portalWrapper.find('List');
-      backdrop = portalWrapper.find('Backdrop');
-      assert.strictEqual(backdrop.length, 1);
+      portalLayer = wrapper
+        .find(Portal)
+        .instance()
+        .getMountNode();
     });
 
     it('should close the menu with tab', done => {
@@ -151,7 +149,10 @@ describe('<Menu> integration', () => {
         },
       });
       assert.strictEqual(wrapper.state().open, true);
-      list.simulate('keyDown', { which: keycode('tab') });
+      const list = portalLayer.querySelector('ul');
+      ReactTestUtils.Simulate.keyDown(list, {
+        which: keycode('tab'),
+      });
       assert.strictEqual(wrapper.state().open, false);
     });
 
@@ -163,7 +164,9 @@ describe('<Menu> integration', () => {
         },
       });
       assert.strictEqual(wrapper.state().open, true);
-      backdrop.simulate('click');
+      const backdrop = portalLayer.querySelector('[data-mui-test="Backdrop"]');
+      assert.strictEqual(typeof backdrop !== 'undefined', true);
+      backdrop.click();
       assert.strictEqual(wrapper.state().open, false);
     });
   });
