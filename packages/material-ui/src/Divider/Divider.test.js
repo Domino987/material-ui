@@ -76,14 +76,14 @@ describe('<Divider />', () => {
   });
 
   describe('prop: variant', () => {
-    it('should default to variant={"fullBleed"}', () => {
+    it('should default to variant={"fullWidth"}', () => {
       const wrapper = shallow(<Divider />);
       const hr = wrapper.childAt(0);
       assert.strictEqual(hr.hasClass(classes.inset), false);
       assert.strictEqual(hr.hasClass(classes.middle), false);
     });
 
-    describe('prop: variant={"fullBleed"} ', () => {
+    describe('prop: variant={"fullWidth"} ', () => {
       it('should render with the root and default class', () => {
         const wrapper = shallow(<Divider />);
         const hr = wrapper.childAt(0);
@@ -93,7 +93,7 @@ describe('<Divider />', () => {
 
     describe('prop: variant={"inset"} ', () => {
       it('should set the inset class', () => {
-        const wrapper = shallow(<Divider variant={'inset'} />);
+        const wrapper = shallow(<Divider variant="inset" />);
         const hr = wrapper.childAt(0);
         assert.strictEqual(hr.hasClass(classes.inset), true);
       });
