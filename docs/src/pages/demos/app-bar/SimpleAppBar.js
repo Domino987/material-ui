@@ -1,34 +1,52 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import React, { PureComponent } from 'react';
+import DateFnsUtils from '@date-io/date-fns';
+import { DatePicker, MuiPickersUtilsProvider } from 'material-ui-pickers';
 
-const styles = {
-  root: {
-    flexGrow: 1,
-  },
-};
+export default class BasicDatePicker extends PureComponent {
+  state = {
+    selectedDate: '2018-01-01T00:00:00.000Z',
+  }
 
-function SimpleAppBar(props) {
-  const { classes } = props;
+  handleDateChange = (date) => {
+    this.setState({ selectedDate: date });
+  }
 
-  return (
-    <div className={classes.root}>
-      <AppBar position="static" color="default">
-        <Toolbar>
-          <Typography variant="h6" color="inherit">
-            Photos
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+  render() {
+    const { selectedDate } = this.state;
+
+    return (
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <div className="picker">
+          <DatePicker
+            label="Basic example"
+            value={selectedDate}
+            onChange={this.handleDateChange}
+            animateYearScrolling
+          />
+        </div>
+
+        <div className="picker">
+          <DatePicker
+            autoOk
+            label="Clearable"
+            clearable
+            disableFuture
+            maxDateMessage="Date must be less than today"
+            value={selectedDate}
+            onChange={this.handleDateChange}
+          />
+        </div>
+
+        <div className="picker">
+          <DatePicker
+            label="With today button"
+            showTodayButton
+            maxDateMessage="Date must be less than today"
+            value={selectedDate}
+            onChange={this.handleDateChange}
+          />
+        </div>
+      </MuiPickersUtilsProvider>
+    );
+  }
 }
-
-SimpleAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(SimpleAppBar);

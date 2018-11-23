@@ -6,7 +6,33 @@ function resolvePath(sourcePath, currentFile, opts) {
     return `${__dirname}/docs/src/${base}/`;
   }
 
-  return bpmr.resolvePath(sourcePath, currentFile, opts);
+  const t = bpmr.resolvePath(sourcePath, currentFile, opts);
+
+  if (sourcePath === '@material-ui/core/Icon') {
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('sourcePath', sourcePath, t)
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+    console.log('----------------------------')
+  }
+
+  return t;
 }
 
 let defaultPresets;

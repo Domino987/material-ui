@@ -1,12 +1,18 @@
 const webpack = require('webpack');
+const path = require('path');
 const pkg = require('./package.json');
+const withTM = require('@weco/next-plugin-transpile-modules');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { findPages } = require('./docs/src/modules/utils/find');
 
 process.env.LIB_VERSION = pkg.version;
 
 module.exports = {
-  webpack: config => {
+  webpack: (config, options) => {
+    config = withTM({
+      transpileModules: ['material-ui-pickers'],
+    }).webpack(config, options);
+
     const plugins = config.plugins.concat([
       new webpack.DefinePlugin({
         'process.env': {
@@ -26,6 +32,23 @@ module.exports = {
         }),
       );
     }
+
+    // config.module.rules.push({
+    //   ...config.module.rules[config.module.rules.length - 1],
+    //   include: [__dirname + '/node_modules/@material-ui/core'],
+    //   exclude: /node_modules\/(?!(@material-ui\/core)\/).*/,
+    // });
+
+    // config.resolve.alias['@material-ui/core'] = path.resolve(
+    //   __dirname,
+    //   'packages/material-ui/src',
+    // );
+
+    // if (options.isServer) {
+    //   config.externals = ['@material-ui/core', ...config.externals];
+    // }
+
+    // console.log(config);
 
     return Object.assign({}, config, {
       plugins,

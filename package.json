@@ -185,5 +185,11 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@date-io/date-fns": "^0.0.2",
+    "date-fns": "^2.0.0-alpha.25",
+    "material-ui-pickers": "^2.0.2",
+    "@weco/next-plugin-transpile-modules": "latest"
+  }
 }
