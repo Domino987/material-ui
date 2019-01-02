@@ -1,25 +1,33 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/styles';
 import ListItem from '@material-ui/core/ListItem/ListItem';
 import { unstable_Box as Box } from '@material-ui/core/Box';
 import atoms from '../atoms';
 
+const useStyles = makeStyles({
+  root: {
+    padding: '1rem 10px',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  },
+});
+
 const { Avatar, IconButton, Icon, Typography } = atoms;
 
-const Tweet = () => {
+function Tweet() {
+  const classes = useStyles();
+
   return (
-    <ListItem
-      button
-      style={{ padding: '1rem 10px', flexDirection: 'column', alignItems: 'flex-start' }}
-    >
-      <Box mb={'5px'}>
+    <ListItem button className={classes.root}>
+      <Box mb="5px">
         <Grid container spacing={8}>
           <Grid item>
             <Box
-              display={'flex'}
-              height={'100%'}
-              justifyContent={'flex-end'}
-              alignItems={'center'}
+              display="flex"
+              height="100%"
+              justifyContent="flex-end"
+              alignItems="center"
               minWidth={49}
             >
               <Icon light text>
@@ -28,11 +36,11 @@ const Tweet = () => {
             </Box>
           </Grid>
           <Grid item>
-            <Typography light>You tweet</Typography>
+            <Typography light>You Retweeted</Typography>
           </Grid>
         </Grid>
       </Box>
-      <Grid container spacing={8} wrap={'nowrap'}>
+      <Grid container spacing={8} wrap="nowrap">
         <Grid item>
           <Avatar
             medium
@@ -58,11 +66,13 @@ const Tweet = () => {
               </Typography>
               <Typography>
                 In a way CSS is like Redux. You can learn the rules quickly. That may mislead you
-                into thinking. Trade same
+                into thinking you don’t also need to learn how to *apply* them. Some architectural
+                tradeoffs are also similar (actions are indirection like CSS classes, same global
+                namespace issues).
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Box ml={'-12px'} display={'inline-flex'} alignItems={'center'}>
+              <Box ml="-12px" display="inline-flex" alignItems="center">
                 <IconButton>
                   <Icon light text>
                     mode_comment
@@ -72,17 +82,17 @@ const Tweet = () => {
                   24
                 </Typography>
               </Box>
-              <Box ml={'32px'} display={'inline-flex'} alignItems={'center'}>
+              <Box ml="32px" display="inline-flex" alignItems="center">
                 <IconButton success>
                   <Icon light text>
                     cached
                   </Icon>
                 </IconButton>
                 <Typography light inline success>
-                  122
+                  123
                 </Typography>
               </Box>
-              <Box ml={'32px'} display={'inline-flex'} alignItems={'center'}>
+              <Box ml="32px" display="inline-flex" alignItems="center">
                 <IconButton danger>
                   <Icon light text>
                     favorite_border
@@ -92,10 +102,10 @@ const Tweet = () => {
                   661
                 </Typography>
               </Box>
-              <Box ml={'32px'} display={'inline-flex'} alignItems={'center'}>
+              <Box ml="32px" display="inline-flex" alignItems="center">
                 <IconButton>
                   <Icon light text>
-                    space_bar
+                    email
                   </Icon>
                 </IconButton>
               </Box>
@@ -105,6 +115,6 @@ const Tweet = () => {
       </Grid>
     </ListItem>
   );
-};
+}
 
 export default Tweet;
