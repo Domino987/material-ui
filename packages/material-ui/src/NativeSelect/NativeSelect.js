@@ -104,13 +104,13 @@ const NativeSelect = React.forwardRef(function NativeSelect(props, ref) {
     // Most of the logic is implemented in `NativeSelectInput`.
     // The `Select` component is a simple API wrapper to expose something better to play with.
     inputComponent: NativeSelectInput,
+    children,
+    IconComponent,
+    variant: fcs.variant,
+    type: 'hidden', // We render a select. We can ignore the type provided by the `Input`.
     inputProps: {
-      children,
-      classes,
-      IconComponent,
-      variant: fcs.variant,
-      type: undefined, // We render a select. We can ignore the type provided by the `Input`.
       ...inputProps,
+      classes,
       ...(input ? input.props.inputProps : {}),
     },
     ref,
@@ -138,7 +138,9 @@ NativeSelect.propTypes = {
    */
   input: PropTypes.element,
   /**
-   * Attributes applied to the `select` element.
+   * @ignore
+   * @deprecated The props are forwarded to the input element.
+   * Attributes applied to the `input` element.
    */
   inputProps: PropTypes.object,
   /**

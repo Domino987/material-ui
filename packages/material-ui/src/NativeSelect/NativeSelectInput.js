@@ -13,9 +13,6 @@ const NativeSelectInput = React.forwardRef(function NativeSelectInput(props, ref
     disabled,
     IconComponent,
     inputRef,
-    name,
-    onChange,
-    value,
     variant,
     ...other
   } = props;
@@ -32,10 +29,7 @@ const NativeSelectInput = React.forwardRef(function NativeSelectInput(props, ref
           },
           className,
         )}
-        name={name}
         disabled={disabled}
-        onChange={onChange}
-        value={value}
         ref={inputRef || ref}
         {...other}
       >

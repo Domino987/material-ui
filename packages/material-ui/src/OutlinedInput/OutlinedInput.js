@@ -167,6 +167,8 @@ OutlinedInput.propTypes = {
    */
   inputComponent: PropTypes.elementType,
   /**
+   * @ignore
+   * @deprecated The props are forwarded to the input element.
    * Attributes applied to the `input` element.
    */
   inputProps: PropTypes.object,

@@ -29,7 +29,6 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 | <span class="prop-name">fullWidth</span> | <span class="prop-type">bool</span> |   | If `true`, the input will take up the full width of its container. |
 | <span class="prop-name">id</span> | <span class="prop-type">string</span> |   | The id of the `input` element. |
 | <span class="prop-name">inputComponent</span> | <span class="prop-type">elementType</span> |   | The component used for the native input. Either a string to use a DOM element or a component. |
-| <span class="prop-name">inputProps</span> | <span class="prop-type">object</span> |   | Attributes applied to the `input` element. |
 | <span class="prop-name">inputRef</span> | <span class="prop-type">union:&nbsp;func&nbsp;&#124;<br>&nbsp;object<br></span> |   | Use that property to pass a ref callback to the native input component. |
 | <span class="prop-name required">labelWidth *</span> | <span class="prop-type">number</span> |   | The width of the legend. |
 | <span class="prop-name">margin</span> | <span class="prop-type">enum:&nbsp;'dense'&nbsp;&#124;<br>&nbsp;'none'<br></span> |   | If `dense`, will adjust vertical spacing. This is normally obtained via context from FormControl. |

@@ -195,14 +195,14 @@ class SelectInput extends React.Component {
       required,
       SelectDisplayProps,
       tabIndex: tabIndexProp,
-      type = 'hidden',
+      type,
       value,
       variant,
       ...other
     } = this.props;
-    const open = this.isOpenControlled && this.displayRef ? openProp : this.state.open;
-
     delete other['aria-invalid'];
+
+    const open = this.isOpenControlled && this.displayRef ? openProp : this.state.open;
 
     let display;
     let displaySingle = '';
@@ -280,7 +280,7 @@ class SelectInput extends React.Component {
     }
 
     return (
-      <div className={classes.root}>
+      <div className={classes.root} {...other}>
         <div
           className={clsx(
             classes.select,
@@ -314,9 +314,8 @@ class SelectInput extends React.Component {
         <input
           value={Array.isArray(value) ? value.join(',') : value}
           name={name}
-          ref={this.handleInputRef}
           type={type}
-          {...other}
+          ref={this.handleInputRef}
         />
         <IconComponent className={classes.icon} />
         <Menu
@@ -457,7 +456,7 @@ SelectInput.propTypes = {
   /**
    * @ignore
    */
-  type: PropTypes.string,
+  type: PropTypes.string.isRequired,
   /**
    * The input value.
    */

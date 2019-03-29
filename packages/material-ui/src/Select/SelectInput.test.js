@@ -12,6 +12,7 @@ describe('<SelectInput />', () => {
   let mount;
   const defaultProps = {
     classes: { select: 'select' },
+    type: 'hidden',
     autoWidth: false,
     value: 10,
     multiple: false,
@@ -129,14 +130,9 @@ describe('<SelectInput />', () => {
   });
 
   describe('prop: type', () => {
-    it('should be hidden by default', () => {
-      const wrapper = shallow(<SelectInput {...defaultProps} />);
+    it('should forward the prop', () => {
+      const wrapper = shallow(<SelectInput {...defaultProps} type="hidden" />);
       assert.strictEqual(wrapper.find('input').props().type, 'hidden');
-    });
-
-    it('should be able to override it', () => {
-      const wrapper = shallow(<SelectInput {...defaultProps} type="text" />);
-      assert.strictEqual(wrapper.find('input').props().type, 'text');
     });
   });
 

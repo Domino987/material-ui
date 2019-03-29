@@ -140,8 +140,6 @@ export const styles = theme => {
   };
 };
 
-const ariaRegExp = /^aria-/;
-
 /**
  * `InputBase` contains as few styles as possible.
  * It aims to be a simple building block for creating an input.
@@ -286,11 +284,8 @@ class InputBase extends React.Component {
 
   render() {
     const {
-      autoComplete,
-      autoFocus,
       classes,
-      className: classNameProp,
-      defaultValue,
+      className,
       disabled,
       endAdornment,
       error,
@@ -303,17 +298,12 @@ class InputBase extends React.Component {
       margin,
       muiFormControl,
       multiline,
-      name,
       onBlur,
       onChange,
       onClick,
       onEmpty,
       onFilled,
       onFocus,
-      onKeyDown,
-      onKeyUp,
-      placeholder,
-      readOnly,
       renderPrefix,
       rows,
       rowsMax,
@@ -323,15 +313,6 @@ class InputBase extends React.Component {
       ...other
     } = this.props;
 
-    const ariaAttributes = {};
-
-    Object.keys(other).forEach(key => {
-      if (ariaRegExp.test(key)) {
-        ariaAttributes[key] = other[key];
-        delete other[key];
-      }
-    });
-
     const fcs = formControlState({
       props: this.props,
       muiFormControl,
@@ -339,36 +320,6 @@ class InputBase extends React.Component {
     });
 
     const focused = muiFormControl ? muiFormControl.focused : this.state.focused;
-
-    const className = clsx(
-      classes.root,
-      {
-        [classes.disabled]: fcs.disabled,
-        [classes.error]: fcs.error,
-        [classes.fullWidth]: fullWidth,
-        [classes.focused]: focused,
-        [classes.formControl]: muiFormControl,
-        [classes.marginDense]: fcs.margin === 'dense',
-        [classes.multiline]: multiline,
-        [classes.adornedStart]: startAdornment,
-        [classes.adornedEnd]: endAdornment,
-      },
-      classNameProp,
-    );
-
-    const inputClassName = clsx(
-      classes.input,
-      {
-        [classes.disabled]: fcs.disabled,
-        [classes.inputType]: type !== 'text',
-        [classes.inputTypeSearch]: type === 'search',
-        [classes.inputMultiline]: multiline,
-        [classes.inputMarginDense]: fcs.margin === 'dense',
-        [classes.inputAdornedStart]: startAdornment,
-        [classes.inputAdornedEnd]: endAdornment,
-      },
-      inputPropsClassName,
-    );
 
     let InputComponent = inputComponent;
     let inputProps = {
@@ -405,7 +356,25 @@ class InputBase extends React.Component {
     }
 
     return (
-      <div className={className} onClick={this.handleClick} ref={innerRef} {...other}>
+      <div
+        className={clsx(
+          classes.root,
+          {
+            [classes.disabled]: fcs.disabled,
+            [classes.error]: fcs.error,
+            [classes.fullWidth]: fullWidth,
+            [classes.focused]: focused,
+            [classes.formControl]: muiFormControl,
+            [classes.marginDense]: fcs.margin === 'dense',
+            [classes.multiline]: multiline,
+            [classes.adornedStart]: startAdornment,
+            [classes.adornedEnd]: endAdornment,
+          },
+          className,
+        )}
+        onClick={this.handleClick}
+        ref={innerRef}
+      >
         {renderPrefix
           ? renderPrefix({
               ...fcs,
@@ -417,24 +386,28 @@ class InputBase extends React.Component {
         <FormControlContext.Provider value={null}>
           <InputComponent
             aria-invalid={fcs.error}
-            autoComplete={autoComplete}
-            autoFocus={autoFocus}
-            className={inputClassName}
-            defaultValue={defaultValue}
+            className={clsx(
+              classes.input,
+              {
+                [classes.disabled]: fcs.disabled,
+                [classes.inputType]: type !== 'text',
+                [classes.inputTypeSearch]: type === 'search',
+                [classes.inputMultiline]: multiline,
+                [classes.inputMarginDense]: fcs.margin === 'dense',
+                [classes.inputAdornedStart]: startAdornment,
+                [classes.inputAdornedEnd]: endAdornment,
+              },
+              inputPropsClassName,
+            )}
             disabled={fcs.disabled}
             id={id}
-            name={name}
             onBlur={this.handleBlur}
             onChange={this.handleChange}
             onFocus={this.handleFocus}
-            onKeyDown={onKeyDown}
-            onKeyUp={onKeyUp}
-            placeholder={placeholder}
-            readOnly={readOnly}
             required={fcs.required}
             rows={rows}
             value={value}
-            {...ariaAttributes}
+            {...other}
             {...inputProps}
           />
         </FormControlContext.Provider>
@@ -509,6 +482,8 @@ InputBase.propTypes = {
    */
   inputComponent: PropTypes.elementType,
   /**
+   * @ignore
+   * @deprecated The props are forwarded to the input element.
    * Attributes applied to the `input` element.
    */
   inputProps: PropTypes.object,
@@ -560,14 +535,6 @@ InputBase.propTypes = {
    * @ignore
    */
   onFocus: PropTypes.func,
-  /**
-   * @ignore
-   */
-  onKeyDown: PropTypes.func,
-  /**
-   * @ignore
-   */
-  onKeyUp: PropTypes.func,
   /**
    * The short hint displayed in the input before the user enters a value.
    */

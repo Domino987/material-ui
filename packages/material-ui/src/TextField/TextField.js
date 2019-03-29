@@ -41,11 +41,11 @@ const styles = {
  * If you wish to alter the properties applied to the native input, you can do so as follows:
  *
  * ```jsx
- * const inputProps = {
+ * const InputProps = {
  *   step: 300,
  * };
  *
- * return <TextField id="time" type="time" inputProps={inputProps} />;
+ * return <TextField id="time" type="time" InputProps={InputProps} />;
  * ```
  *
  * For advanced cases, please look at the source of TextField by clicking on the
@@ -134,7 +134,7 @@ const TextField = React.forwardRef(function TextField(props, ref) {
       onChange={onChange}
       onFocus={onFocus}
       placeholder={placeholder}
-      inputProps={inputProps}
+      {...inputProps}
       {...InputMore}
       {...InputProps}
     />
@@ -234,7 +234,9 @@ TextField.propTypes = {
    */
   InputProps: PropTypes.object,
   /**
-   * Attributes applied to the native `input` element.
+   * @ignore
+   * @deprecated The props are forwarded to the input element.
+   * Attributes applied to the `input` element.
    */
   inputProps: PropTypes.object,
   /**
