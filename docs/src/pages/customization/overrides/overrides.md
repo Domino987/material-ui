@@ -123,7 +123,7 @@ Aside from accessing nested elements, the `classes` property can be used to cust
 <MenuItem selected classes={{ root: 'menu-item', selected: 'selected' }}>
 ```
 
-##### Why do I need to increase specificity to override one component state?
+#### Why do I need to increase specificity to override one component state?
 
 By design, the CSS specification makes the pseudo-classes increase the specificity.
 For consistency, Material-UI increases the specificity of its custom states.
@@ -188,9 +188,6 @@ We demonstrate 5 alternatives, each has it's pros and cons.
 
 {{"demo": "pages/customization/overrides/DynamicCSS.js"}}
 
-⚠️ This demo relies on the [`@material-ui/styles`](/css-in-js/basics/) package.
-It doesn't work with the stable version.
-
 ### Class name branch
 
 {{"demo": "pages/customization/overrides/DynamicClassName.js"}}
@@ -227,17 +224,13 @@ Material-UI attempts to implement all of these variations. Please refer to the [
 
 In order to promote consistency between components, and manage the user interface appearance as a whole, Material-UI provides a mechanism to apply global changes by adjusting the [theme configuration variables](/customization/themes/#theme-configuration-variables).
 
-### Global theme override
-
-Do you want to customize **all the instances** of a component type?
-
-When the configuration variables aren't powerful enough,
-you can take advantage of the `overrides` key of the `theme` to potentially change every single style injected by Material-UI into the DOM.
-Learn more about it in the [themes section](/customization/themes/#customizing-all-instances-of-a-component-type) of the documentation.
-
 ### Global CSS override
 
 You can also customize all instances of a component with CSS.
-We expose a `dangerouslyUseGlobalCSS` option to do so.
-Learn more about it in the [styles section](/css-in-js/advanced/#deterministic-class-names) of the documentation.
+We expose [global class names](/css-in-js/advanced/#with-material-ui-core) to do so.
 It's very similar to how you would customize Bootstrap.
+
+### Global theme override
+
+You can take advantage of the `overrides` key of the `theme` to potentially change every single style injected by Material-UI into the DOM.
+Learn more about it in the [themes section](/customization/themes/#customizing-all-instances-of-a-component-type) of the documentation.
