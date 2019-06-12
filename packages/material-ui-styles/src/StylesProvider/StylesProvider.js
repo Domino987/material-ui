@@ -5,42 +5,58 @@ import { exactProp } from '@material-ui/utils';
 import createGenerateClassName from '../createGenerateClassName';
 import { create } from 'jss';
 import jssPreset from '../jssPreset';
+import { JssContext } from 'react-jss';
 
 // Default JSS instance.
 const jss = create(jssPreset());
 
-// Use a singleton or the provided one by the context.
-//
-// The counter-based approach doesn't tolerate any mistake.
-// It's much safer to use the same counter everywhere.
-const generateClassName = createGenerateClassName();
-
-// Exported for test purposes
-export const sheetsManager = new Map();
-
-const defaultOptions = {
-  disableGeneration: false,
-  generateClassName,
+export const defaultOptions = {
+  sheetOptions: {
+    // Use a singleton or the provided one by the context.
+    //
+    // The counter-based approach doesn't tolerate any mistake.
+    // It's much safer to use the same counter everywhere.
+    generateId: createGenerateClassName(),
+    flip: false,
+  },
   jss,
-  sheetsCache: null,
-  sheetsManager,
-  sheetsRegistry: null,
 };
 
-export const StylesContext = React.createContext(defaultOptions);
+export const StylesContext = JssContext;
 
 let injectFirstNode;
 
 function StylesProvider(props) {
-  const { children, injectFirst, ...localOptions } = props;
+  const {
+    children,
+    injectFirst,
+    sheetsRegistry: registry,
+    generateClassName,
+    disableGeneration: disableStylesGeneration,
+    ...localOptions
+  } = props;
 
-  const outerOptions = React.useContext(StylesContext);
-  const context = { ...outerOptions, ...localOptions };
+  let context = React.useContext(StylesContext);
 
-  warning(
-    typeof window !== 'undefined' || context.sheetsManager,
-    'Material-UI: you need to use the ServerStyleSheets API when rendering on the server.',
-  );
+  context = {
+    ...defaultOptions,
+    ...context,
+    sheetOptions: {
+      ...defaultOptions.sheetOptions,
+      ...context.sheetOptions,
+    },
+  };
+
+  context = {
+    ...context,
+    sheetOptions: {
+      ...context.sheetOptions,
+      ...(!context.generateId && generateClassName ? { generateId: generateClassName } : {}),
+    },
+    ...(registry ? { registry } : {}),
+    ...(disableStylesGeneration ? { disableStylesGeneration } : {}),
+    ...localOptions,
+  };
 
   warning(
     !context.jss.options.insertionPoint || !injectFirst,
@@ -61,6 +77,8 @@ function StylesProvider(props) {
 
     context.jss = create({ plugins: jssPreset().plugins, insertionPoint: injectFirstNode });
   }
+
+  console.log('context', context);
 
   return <StylesContext.Provider value={context}>{children}</StylesContext.Provider>;
 }
@@ -96,22 +114,6 @@ StylesProvider.propTypes = {
    * @ignore
    */
   serverGenerateClassName: PropTypes.func,
-  /**
-   * @ignore
-   *
-   * Beta feature.
-   *
-   * Cache for the sheets.
-   */
-  sheetsCache: PropTypes.object,
-  /**
-   * @ignore
-   *
-   * The sheetsManager is used to deduplicate style sheet injection in the page.
-   * It's deduplicating using the (theme, styles) couple.
-   * On the server, you should provide a new instance for each request.
-   */
-  sheetsManager: PropTypes.object,
   /**
    * @ignore
    *

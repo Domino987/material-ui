@@ -51,11 +51,7 @@ const theme = createMuiTheme({
 function renderPricing(req, res) {
   const sheetsRegistry = new SheetsRegistry();
   const html = ReactDOMServer.renderToString(
-    <StylesProvider
-      sheetsRegistry={sheetsRegistry}
-      generateClassName={createGenerateClassName()}
-      sheetsManager={new Map()}
-    >
+    <StylesProvider sheetsRegistry={sheetsRegistry} generateClassName={createGenerateClassName()}>
       <ThemeProvider theme={theme}>
         <Pricing />
       </ThemeProvider>
@@ -68,11 +64,7 @@ function renderPricing(req, res) {
 function renderBox(req, res) {
   const sheetsRegistry = new SheetsRegistry();
   const html = ReactDOMServer.renderToString(
-    <StylesProvider
-      sheetsRegistry={sheetsRegistry}
-      generateClassName={createGenerateClassName()}
-      sheetsManager={new Map()}
-    >
+    <StylesProvider sheetsRegistry={sheetsRegistry} generateClassName={createGenerateClassName()}>
       <ThemeProvider theme={theme}>
         {Array.from(new Array(1000)).map((_, index) => (
           <Box key={String(index)} m={1} />
@@ -87,11 +79,7 @@ function renderBox(req, res) {
 function renderAvatar(req, res) {
   const sheetsRegistry = new SheetsRegistry();
   const html = ReactDOMServer.renderToString(
-    <StylesProvider
-      sheetsRegistry={sheetsRegistry}
-      generateClassName={createGenerateClassName()}
-      sheetsManager={new Map()}
-    >
+    <StylesProvider sheetsRegistry={sheetsRegistry} generateClassName={createGenerateClassName()}>
       {Array.from(new Array(1)).map((_, index) => (
         <Avatar key={String(index)}>Avatar</Avatar>
       ))}
@@ -104,11 +92,7 @@ function renderAvatar(req, res) {
 function renderStyledFunction(req, res) {
   const sheetsRegistry = new SheetsRegistry();
   const html = ReactDOMServer.renderToString(
-    <StylesProvider
-      sheetsRegistry={sheetsRegistry}
-      generateClassName={createGenerateClassName()}
-      sheetsManager={new Map()}
-    >
+    <StylesProvider sheetsRegistry={sheetsRegistry} generateClassName={createGenerateClassName()}>
       {Array.from(new Array(1000)).map((_, index) => (
         <StyledFunction key={String(index)} />
       ))}
