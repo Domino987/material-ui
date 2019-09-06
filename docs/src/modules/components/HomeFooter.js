@@ -56,13 +56,13 @@ function HomeFooter(props) {
       <Container maxWidth="md">
         <footer className={classes.footer}>
           <Grid container>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={3}>
               <div className={classes.logo}>
                 <img src="/static/images/material-ui-logo.svg" alt="" />
                 <Typography color="primary">Material-UI</Typography>
               </div>
             </Grid>
-            <Grid item xs={6} sm={4} className={classes.list}>
+            <Grid item xs={6} sm={3} className={classes.list}>
               <Typography component="h2" gutterBottom>
                 {t('footerCommunity')}
               </Typography>
@@ -97,7 +97,7 @@ function HomeFooter(props) {
                 </li>
               </ul>
             </Grid>
-            <Grid item xs={6} sm={4} className={classes.list}>
+            <Grid item xs={6} sm={3} className={classes.list}>
               <Typography component="h2" gutterBottom>
                 {t('footerResources')}
               </Typography>
@@ -115,6 +115,28 @@ function HomeFooter(props) {
                 <li>
                   <Link color="inherit" variant="body2" href="/components/material-icons/">
                     {t('pages./components/material-icons')}
+                  </Link>
+                </li>
+              </ul>
+            </Grid>
+            <Grid item xs={6} md={3} className={classes.list}>
+              <Typography component="h3" gutterBottom>
+                {t('footerCompany')}
+              </Typography>
+              <ul>
+                <li>
+                  <Link color="inherit" variant="body2" href="/company/about/">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link color="inherit" variant="body2" href="/company/contact-us/">
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link color="inherit" variant="body2" href="/company/careers/">
+                    Careers
                   </Link>
                 </li>
               </ul>
