@@ -134,8 +134,7 @@ const TextareaAutosize = React.forwardRef(function TextareaAutosize(props, ref) 
         {...other}
       />
       <textarea
-        aria-hidden
-        aria-label="Shadow Input"
+        aria-label="hidden input"
         className={props.className}
         readOnly
         ref={shadowRef}
